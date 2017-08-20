@@ -3,6 +3,7 @@ using namespace Whist;
 
 int main()
 {
-	MyForm mainWindow;
+	MyForm^ mainWindow = gcnew MyForm();
+	mainWindow->ShowDialog();
 	return 0;
 }

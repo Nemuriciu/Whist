@@ -1,4 +1,2 @@
 ﻿  main.cpp
-main.cpp(5): error C2065: 'MyForm': undeclared identifier
-main.cpp(5): error C2146: syntax error: missing ';' before identifier 'a'
-main.cpp(5): error C2065: 'a': undeclared identifier
+  Whist.vcxproj -> C:\Users\Vlad\Desktop\Whist\Debug\Whist.exe
