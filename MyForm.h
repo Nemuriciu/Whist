@@ -24,9 +24,6 @@ namespace Whist {
 		}
 
 	protected:
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
 		~MyForm()
 		{
 			if (components)
@@ -35,11 +32,11 @@ namespace Whist {
 			}
 		}
 
-	private:
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		System::ComponentModel::Container ^components;
+	private: System::Windows::Forms::Button ^newGame;
+
+	private: System::ComponentModel::Container ^components;
+	
+	
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -48,11 +45,20 @@ namespace Whist {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			// New Game Button //
+			this->newGame = (gcnew System::Windows::Forms::Button());
+			this->newGame->Location = System::Drawing::Point(100, 100);
+			this->newGame->Text = L"NEW GAME";
+			this->newGame->Size = System::Drawing::Size(50, 50);
+			this->newGame->UseVisualStyleBackColor = true;
+
 			this->components = gcnew System::ComponentModel::Container();
 			this->Size = System::Drawing::Size(1024,800);
-			this->Text = L"MyForm";
+			this->Text = L"WHIST";
 			this->Padding = System::Windows::Forms::Padding(0);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+
+			
 		}
 #pragma endregion
 	};
