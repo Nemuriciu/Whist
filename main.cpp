@@ -33,18 +33,36 @@ int main()
 	mainWindow->ShowDialog();
 	
 	unsigned int num_pl = 0;
+<<<<<<< HEAD
+	cin >> num_pl;
+=======
+>>>>>>> 8a16acd0fae1688a639bd24fb14d5616051f7004
 	
 	vector  <Card*> cards = createVector(num_pl);
 	vector <Player*> players;
 
 	for (size_t i = 0; i < num_pl; i++)
 	{
+		// set name 
 		string name = "Player";
 		char str[2];
 		_itoa_s(i + 1, str, 10);
 		name = name + str;
+		
 		Player *player = new Player(name);
 		players.push_back(player);
+		
+		// initialisation of vector players->cards
+
+		for (size_t i = 0; i < 8; i++)
+		{
+			int random_num = rand() % num_pl * 8;
+			Card *card = cards[random_num - 1];
+			cards.erase(cards.begin() + random_num - 1);
+			players[i]->cards.push_back(card);
+		}
+		
+
 	}
 
 	return 0;
