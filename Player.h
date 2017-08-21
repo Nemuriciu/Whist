@@ -7,7 +7,7 @@ using namespace std;
 class Player
 {
 public:
-	vector<Card> cards;
+	vector<Card*> cards;
 	string name;
 	Player(string name);
 	~Player();
