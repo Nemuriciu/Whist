@@ -57,7 +57,7 @@ namespace Whist {
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"NEW GAME";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::NewGame_Click);
 			// 
 			// MyForm
 			// 
@@ -71,12 +71,12 @@ namespace Whist {
 				static_cast<System::Byte>(0)));
 			this->Name = L"MyForm";
 			this->Text = L"WHIST";
-			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void NewGame_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->button1->Visible = false;
 	}
 	};
 }
