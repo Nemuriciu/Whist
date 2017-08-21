@@ -1,2 +1,2 @@
-﻿  main.cpp
-  Whist.vcxproj -> C:\Users\Vlad\Desktop\Whist\Debug\Whist.exe
+﻿main.obj : error LNK2022: metadata operation failed (80131195) : Custom attributes are not consistent: (0x0c000001).
+LINK : fatal error LNK1255: link failed because of metadata errors
