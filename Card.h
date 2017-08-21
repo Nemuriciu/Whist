@@ -1,9 +1,8 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 using namespace std;
 
-
-class Card
+public class Card
 {
 public:
 	enum Color
@@ -17,4 +16,3 @@ public:
 	Card(int val, Color type);
 	~Card();
 };
-

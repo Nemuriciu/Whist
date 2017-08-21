@@ -1,8 +1,7 @@
 #include "MyForm.h"
-#include "Card.h"
 #include "Player.h"
 #include <vector>
-#include "stdlib.h"
+#include <stdlib.h>
 #include <iostream>
 
 using namespace std;
@@ -27,13 +26,13 @@ vector <Card*> createVector(int val)
 
 	return cards;
 }
+
 int main()
 {
 	MyForm^ mainWindow = gcnew MyForm();
 	mainWindow->ShowDialog();
 	
-	int num_pl;
-	cin >> num_pl;
+	unsigned int num_pl = 0;
 	
 	vector  <Card*> cards = createVector(num_pl);
 	vector <Player*> players;
@@ -42,13 +41,11 @@ int main()
 	{
 		string name = "Player";
 		char str[2];
-		itoa(i + 1, str, 10);
+		_itoa_s(i + 1, str, 10);
 		name = name + str;
 		Player *player = new Player(name);
 		players.push_back(player);
 	}
-
-
 
 	return 0;
 }
