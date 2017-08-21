@@ -3,6 +3,8 @@
 #include <vector>
 #include <stdlib.h>
 #include <iostream>
+#include <time.h>
+#include <random>
 
 using namespace std;
 using namespace Whist;
@@ -31,8 +33,8 @@ int main()
 {
 	MyForm^ mainWindow = gcnew MyForm();
 	mainWindow->ShowDialog();
-	
-	unsigned int num_pl = 0;
+
+	unsigned int num_pl = 6;
 	vector  <Card*> cards = createVector(num_pl);
 	vector <Player*> players;
 
@@ -49,16 +51,31 @@ int main()
 		
 		// initialisation of vector players->cards
 
-		for (size_t i = 0; i < 8; i++)
+		for (size_t j = 0; j < 8; j++)
 		{
-			int random_num = rand() % num_pl * 8;
-			Card *card = cards[random_num - 1];
-			cards.erase(cards.begin() + random_num - 1);
-			players[i]->cards.push_back(card);
-		}
-		
+			mt19937 generator;
+			generator.seed(random_device()());
+			uniform_int_distribution<mt19937::result_type> dist(0, 431269821);
+			
+			int random_num = 0;
 
+			if(cards.size() >= 2)
+				random_num = dist(generator) % (cards.size() - 1);
+
+			Card *card = cards[random_num];
+			players[i]->cards.push_back(card);
+			cards.erase(cards.begin() + random_num);
+		}
 	}
 
+	
+	
+	/*for (size_t i = 0; i < 8; i++)
+	{
+		cout << endl;
+		cout << players[1]->cards[i]->val << " " << players[1]->cards[i]->type;
+	}
+
+	while (1) {}*/
 	return 0;
 }
