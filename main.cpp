@@ -26,13 +26,17 @@ vector <Card*> createVector(int val)
 
 	return cards;
 }
+
 int main()
 {
 	MyForm^ mainWindow = gcnew MyForm();
 	mainWindow->ShowDialog();
 	
 	unsigned int num_pl = 0;
+<<<<<<< HEAD
 	cin >> num_pl;
+=======
+>>>>>>> 8a16acd0fae1688a639bd24fb14d5616051f7004
 	
 	vector  <Card*> cards = createVector(num_pl);
 	vector <Player*> players;
@@ -60,8 +64,6 @@ int main()
 		
 
 	}
-
-
 
 	return 0;
 }
