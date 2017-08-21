@@ -33,11 +33,6 @@ int main()
 	mainWindow->ShowDialog();
 	
 	unsigned int num_pl = 0;
-<<<<<<< HEAD
-	cin >> num_pl;
-=======
->>>>>>> 5e9726b499348c6907b0e7e80f446300b6872983
-	
 	vector  <Card*> cards = createVector(num_pl);
 	vector <Player*> players;
 

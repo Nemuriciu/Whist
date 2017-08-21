@@ -1,2 +1,1 @@
-﻿main.obj : error LNK2022: metadata operation failed (80131195) : Custom attributes are not consistent: (0x0c000001).
-LINK : fatal error LNK1255: link failed because of metadata errors
+﻿  Whist.vcxproj -> C:\Users\Anca\Documents\GitHub\Whist\Debug\Whist.exe
