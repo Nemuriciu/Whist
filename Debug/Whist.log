@@ -1,6 +1,1 @@
-﻿  main.cpp
-<<<<<<< HEAD
-  Whist.vcxproj -> C:\Users\Anca\Documents\GitHub\Whist\Debug\Whist.exe
-=======
-  Whist.vcxproj -> C:\Users\Vlad\Desktop\Whist\Debug\Whist.exe
->>>>>>> aa4c43f9d36daf744c182fbf5197e3338ea0c56f
+﻿C:\Users\Anca\Documents\GitHub\Whist\GameForm.resx(2463,2): error MSB3103: Invalid Resx file. Name cannot begin with the '<' character, hexadecimal value 0x3C. Line 2463, position 2.
