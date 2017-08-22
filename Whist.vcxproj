@@ -135,6 +135,7 @@
     <ClInclude Include="GameForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Main.h" />
     <ClInclude Include="MenuForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

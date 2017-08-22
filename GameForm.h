@@ -1,5 +1,5 @@
 #pragma once
-#include <iostream>
+#include "Main.h"
 
 namespace Whist {
 
@@ -15,6 +15,9 @@ namespace Whist {
 	/// </summary>
 	public ref class GameForm : public System::Windows::Forms::Form
 	{
+	private:
+		Main *main = new Main();
+
 	public:
 		GameForm(void)
 		{
@@ -122,31 +125,22 @@ namespace Whist {
 	private: System::Windows::Forms::PictureBox^  player2_1;
 
 	private: System::Windows::Forms::PictureBox^  player2_0;
-private: System::Windows::Forms::Label^  player1_name;
-private: System::Windows::Forms::Label^  player2_name;
-private: System::Windows::Forms::Label^  player3_name;
-private: System::Windows::Forms::Label^  player4_name;
-private: System::Windows::Forms::Label^  player5_name;
-private: System::Windows::Forms::Label^  player6_name;
-private: System::Windows::Forms::PictureBox^  player1_table;
+	private: System::Windows::Forms::Label^  player1_name;
+	private: System::Windows::Forms::Label^  player2_name;
+	private: System::Windows::Forms::Label^  player3_name;
+	private: System::Windows::Forms::Label^  player4_name;
+	private: System::Windows::Forms::Label^  player5_name;
+	private: System::Windows::Forms::Label^  player6_name;
+	private: System::Windows::Forms::PictureBox^  player1_table;
 
-private: System::Windows::Forms::PictureBox^  player2_table;
-private: System::Windows::Forms::PictureBox^  player6_table;
-private: System::Windows::Forms::PictureBox^  player4_table;
-
-
-
-private: System::Windows::Forms::PictureBox^  player5_table;
-private: System::Windows::Forms::PictureBox^  player3_table;
+	private: System::Windows::Forms::PictureBox^  player2_table;
+	private: System::Windows::Forms::PictureBox^  player6_table;
+	private: System::Windows::Forms::PictureBox^  player4_table;
 
 
 
-
-
-
-	protected:
-
-	protected:
+	private: System::Windows::Forms::PictureBox^  player5_table;
+	private: System::Windows::Forms::PictureBox^  player3_table;
 
 	private:
 		/// <summary>
