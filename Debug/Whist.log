@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 ﻿  main.cpp
-  Whist.vcxproj -> C:\Users\Anca\Documents\GitHub\Whist\Debug\Whist.exe
-=======
-﻿  Card.cpp
-  main.cpp
-  Player.cpp
-  Generating Code...
-  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
+c:\users\vlad\desktop\whist\whist\MenuForm.h(164): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned int', possible loss of data
+c:\users\vlad\desktop\whist\whist\MenuForm.h(184): warning C4018: '<': signed/unsigned mismatch
   Whist.vcxproj -> C:\Users\Vlad\Desktop\Whist\Debug\Whist.exe
->>>>>>> 270a3200413dfd9ada860b67f7b272bfeca4a7f8
