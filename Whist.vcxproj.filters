@@ -49,7 +49,7 @@
     <Image Include="Images\GameBck.jpg">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="Images\14-0.jpeg">
+    <Image Include="Images\Cards\2_of_clubs.png">
       <Filter>Resource Files\CardsImages</Filter>
     </Image>
   </ItemGroup>
