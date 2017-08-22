@@ -1,4 +1,4 @@
-#include "MyForm.h"
+#include "MenuForm.h"
 #include "Player.h"
 #include <vector>
 #include <stdlib.h>
@@ -31,7 +31,7 @@ vector <Card*> createVector(int val)
 
 int main()
 {
-	MyForm^ mainWindow = gcnew MyForm();
+	MenuForm^ mainWindow = gcnew MenuForm();
 	mainWindow->ShowDialog();
 
 	unsigned int num_pl = 6;
