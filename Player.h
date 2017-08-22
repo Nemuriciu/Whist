@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Player
+public class Player
 {
 public:
 	enum Games
