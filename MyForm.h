@@ -101,8 +101,10 @@ namespace Whist {
 			this->DoubleBuffered = true;
 			this->Font = (gcnew System::Drawing::Font(L"Consolas", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyForm";
 			this->Text = L"WHIST";
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->ResumeLayout(false);
 
 		}
@@ -115,5 +117,7 @@ namespace Whist {
 	private: System::Void ExitGame(System::Object^  sender, System::EventArgs^  e) {
 		this->Hide();
 	}
-	};
+	private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
+	}
+};
 }

@@ -68,7 +68,8 @@ int main()
 		}
 	}
 
-	
+	vector <Card*> cardsOnTable;
+
 	
 	/*for (size_t i = 0; i < 8; i++)
 	{
