@@ -105,17 +105,12 @@ namespace Whist {
 			this->DoubleBuffered = true;
 			this->Font = (gcnew System::Drawing::Font(L"Consolas", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-<<<<<<< HEAD:MyForm.h
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Name = L"MyForm";
-=======
 			this->ForeColor = System::Drawing::Color::Transparent;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MenuForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
->>>>>>> 8c655913bc7c31b6b6f37721fdb7c714d9fc128c:MenuForm.h
 			this->Text = L"WHIST";
-			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->ResumeLayout(false);
 
 		}

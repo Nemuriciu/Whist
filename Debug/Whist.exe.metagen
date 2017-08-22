@@ -1,4 +1,5 @@
-  Whist.MyForm.resources - Embedded, ContainedInManifestFile, 
+  Whist.GameForm.resources - Embedded, ContainedInManifestFile, 
+  Whist.MenuForm.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly Whist, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
 	hash=SHA1, flags=PublicKey
@@ -20,6 +21,9 @@ Struct Card+Color: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFie
   :System.Enum
   Fields:
     Int32 value__ : Public, SpecialName, RTSpecialName
-Class Whist.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class Whist.GameForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Whist.MenuForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

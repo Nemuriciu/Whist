@@ -29,6 +29,72 @@ vector <Card*> createVector(int val)
 	return cards;
 }
 
+int checkingCard(Player* player, Card* card, vector <Card*> cardsOnTable)
+{
+	if (card->type == cardsOnTable.begin.type)
+		return 1;
+
+	for (size_t i = 0; i < player->cards.size; i++)
+		if (player->cards[i]->type == cardsOnTable.begin.type)
+			return 0;
+
+	return 1;
+}
+
+int points(vector <Card*> cardsOnTable, Player* player)
+{
+	signed Points = 0;
+
+	switch (player->game)
+	{
+		// Totals
+	case (6):
+
+		// King of hearts
+	case (0):
+		for (size_t i = 0; i < cardsOnTable.size; i++)
+			if (cardsOnTable[i]->type == 2 && cardsOnTable[i]->val == 13)
+				Points = Points -80;
+		if (player->game == 0)
+			break;
+		
+		// Ten of clubs
+	case (1):
+		for (size_t i = 0; i < cardsOnTable.size; i++)
+			if (cardsOnTable[i]->type == 0 && cardsOnTable[i]->val == 10)
+				Points = Points + 80;
+		if (player->game == 1)
+			break;
+
+		// Queens
+	case (2):
+		for (size_t i = 0; i < cardsOnTable.size; i++)
+			if (cardsOnTable[i]->val == 12)
+				Points = Points - 20;
+		if (player->game == 2)
+			break;
+
+		// Diamonds
+	case (3):
+		for (size_t i = 0; i < cardsOnTable.size; i++)
+			if (cardsOnTable[i]->type == 1)
+				Points = Points - 10;
+		if (player->game == 3)
+			break;
+
+		// Whist
+	case (4):
+		Points = Points + 10;
+			break;
+
+		// Acool
+	case (7):
+		Points = Points - 10;
+		break;
+
+	}
+}
+
 int main()
 {
 	MenuForm^ mainWindow = gcnew MenuForm();
