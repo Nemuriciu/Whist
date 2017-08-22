@@ -1139,10 +1139,6 @@ namespace Whist {
 			this->Controls->Add(this->player1_2);
 			this->Controls->Add(this->player1_1);
 			this->Controls->Add(this->player1_0);
-<<<<<<< HEAD
-=======
-
->>>>>>> 4d20864b354be2f96f62766f5acdb60263e1c787
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"GameForm";
