@@ -139,6 +139,9 @@ int Main::points(vector <Card*> cardsOnTable, Player* player)
 		break;
 
 	}
+<<<<<<< HEAD
+=======
 
+>>>>>>> 4d20864b354be2f96f62766f5acdb60263e1c787
 	return Points;
 }
