@@ -42,7 +42,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\Downloads\WhistBackground.jpg">
+    <Image Include="Images\WhistBackground.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Images\GameBck.jpg">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

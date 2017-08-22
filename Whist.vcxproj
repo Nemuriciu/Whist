@@ -148,7 +148,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\Downloads\WhistBackground.jpg">
+    <Image Include="Images\GameBck.jpg">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="Images\WhistBackground.jpg">
       <DeploymentContent>true</DeploymentContent>
     </Image>
   </ItemGroup>
