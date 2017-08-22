@@ -154,6 +154,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Images\Cards\2_of_clubs.png" />
     <Image Include="Images\GameBck.jpg">
       <DeploymentContent>true</DeploymentContent>
     </Image>
