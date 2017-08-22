@@ -146,6 +146,9 @@
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GameForm.resx">
+      <DependentUpon>GameForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.h</DependentUpon>
     </EmbeddedResource>

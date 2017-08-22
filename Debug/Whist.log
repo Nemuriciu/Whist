@@ -1,1 +1,6 @@
-﻿  Whist.vcxproj -> C:\Users\Vlad\Desktop\Whist\Debug\Whist.exe
+﻿  main.cpp
+<<<<<<< HEAD
+  Whist.vcxproj -> C:\Users\Anca\Documents\GitHub\Whist\Debug\Whist.exe
+=======
+  Whist.vcxproj -> C:\Users\Vlad\Desktop\Whist\Debug\Whist.exe
+>>>>>>> aa4c43f9d36daf744c182fbf5197e3338ea0c56f
