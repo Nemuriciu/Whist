@@ -14,8 +14,9 @@ public:
 	
 	vector<Card*> cards;
 	string name;
+	int numberOfPlayer;
 	Games game;
-	Player(string name);
+	Player(string name, int numberOfPlayer);
 	~Player();
 };
 

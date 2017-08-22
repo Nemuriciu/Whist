@@ -1207,6 +1207,8 @@ namespace Whist {
 		PictureBox ^obj = safe_cast<PictureBox^>(sender);
 
 		obj->Location.Y -= 30;
+
+		main->
 	}
 };
 }

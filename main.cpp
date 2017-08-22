@@ -27,7 +27,7 @@ Main::Main()
 		_itoa_s(i + 1, str, 10);
 		name = name + str;
 
-		Player *player = new Player(name);
+		Player *player = new Player(name,i);
 		players.push_back(player);
 
 		// initialisation of vector players->cards
@@ -140,4 +140,17 @@ int Main::points(vector <Card*> cardsOnTable, Player* player)
 
 	}
 	return Points;
+}
+
+void Main::markGame(Player player,int game, int (&tabel)[6][8])
+{
+	tabel[player.numberOfPlayer][game] = 1;
+}
+
+int Main::checkingTabel(Player player, int game, int (&tabel)[6][8])
+{
+	if (tabel[player.numberOfPlayer][game] == 1)
+		return 1;
+
+	return 0;
 }
