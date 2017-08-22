@@ -1,1 +1,10 @@
+<<<<<<< HEAD
 ﻿  Whist.vcxproj -> C:\Users\Anca\Documents\GitHub\Whist\Debug\Whist.exe
+=======
+﻿  Card.cpp
+  main.cpp
+  Player.cpp
+  Generating Code...
+  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
+  Whist.vcxproj -> C:\Users\Vlad\Desktop\Whist\Debug\Whist.exe
+>>>>>>> 4d20864b354be2f96f62766f5acdb60263e1c787
