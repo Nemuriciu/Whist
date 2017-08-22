@@ -1,1 +1,13 @@
+<<<<<<< HEAD
 ﻿  Whist.vcxproj -> C:\Users\Vlad\Desktop\Whist\Debug\Whist.exe
+=======
+﻿  Player.cpp
+  main.cpp
+c:\users\anca\documents\github\whist\MenuForm.h(108): error C2059: syntax error: '<<'
+c:\users\anca\documents\github\whist\MenuForm.h(111): error C2059: syntax error: '=='
+c:\users\anca\documents\github\whist\MenuForm.h(116): error C2059: syntax error: '>>'
+c:\users\anca\documents\github\whist\MenuForm.h(118): error C2653: 'MyForm': is not a class or namespace name
+c:\users\anca\documents\github\whist\MenuForm.h(118): error C2276: '&': illegal operation on bound member function expression
+c:\users\anca\documents\github\whist\MenuForm.h(118): error C3364: 'System::EventHandler': invalid argument for delegate constructor; delegate target needs to be a pointer to a member function
+  Generating Code...
+>>>>>>> df2b59c0e22ec581e3863b2c2432b6ce17f9cb46
