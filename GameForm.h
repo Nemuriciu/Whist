@@ -283,12 +283,8 @@ private: System::Windows::Forms::PictureBox^  player3_table;
 			this->player1_0->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player1_0->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_0.BackgroundImage")));
 			this->player1_0->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-<<<<<<< HEAD
-			this->player1_0->Location = System::Drawing::Point(230, 600);
-=======
 			this->player1_0->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->player1_0->Location = System::Drawing::Point(304, 550);
->>>>>>> aa4c43f9d36daf744c182fbf5197e3338ea0c56f
 			this->player1_0->Name = L"player1_0";
 			this->player1_0->Size = System::Drawing::Size(75, 100);
 			this->player1_0->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -301,12 +297,8 @@ private: System::Windows::Forms::PictureBox^  player3_table;
 			this->player1_2->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player1_2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_2.BackgroundImage")));
 			this->player1_2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-<<<<<<< HEAD
-			this->player1_2->Location = System::Drawing::Point(310, 600);
-=======
 			this->player1_2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->player1_2->Location = System::Drawing::Point(384, 550);
->>>>>>> aa4c43f9d36daf744c182fbf5197e3338ea0c56f
 			this->player1_2->Name = L"player1_2";
 			this->player1_2->Size = System::Drawing::Size(75, 100);
 			this->player1_2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -319,12 +311,8 @@ private: System::Windows::Forms::PictureBox^  player3_table;
 			this->player1_1->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player1_1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_1.BackgroundImage")));
 			this->player1_1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-<<<<<<< HEAD
-			this->player1_1->Location = System::Drawing::Point(270, 600);
-=======
 			this->player1_1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->player1_1->Location = System::Drawing::Point(344, 550);
->>>>>>> aa4c43f9d36daf744c182fbf5197e3338ea0c56f
 			this->player1_1->Name = L"player1_1";
 			this->player1_1->Size = System::Drawing::Size(75, 100);
 			this->player1_1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -337,12 +325,8 @@ private: System::Windows::Forms::PictureBox^  player3_table;
 			this->player1_3->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player1_3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_3.BackgroundImage")));
 			this->player1_3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-<<<<<<< HEAD
-			this->player1_3->Location = System::Drawing::Point(350, 600);
-=======
 			this->player1_3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->player1_3->Location = System::Drawing::Point(424, 550);
->>>>>>> aa4c43f9d36daf744c182fbf5197e3338ea0c56f
 			this->player1_3->Name = L"player1_3";
 			this->player1_3->Size = System::Drawing::Size(75, 100);
 			this->player1_3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -355,12 +339,8 @@ private: System::Windows::Forms::PictureBox^  player3_table;
 			this->player1_4->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player1_4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_4.BackgroundImage")));
 			this->player1_4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-<<<<<<< HEAD
-			this->player1_4->Location = System::Drawing::Point(390, 600);
-=======
 			this->player1_4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->player1_4->Location = System::Drawing::Point(464, 550);
->>>>>>> aa4c43f9d36daf744c182fbf5197e3338ea0c56f
 			this->player1_4->Name = L"player1_4";
 			this->player1_4->Size = System::Drawing::Size(75, 100);
 			this->player1_4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -373,12 +353,8 @@ private: System::Windows::Forms::PictureBox^  player3_table;
 			this->player1_5->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player1_5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_5.BackgroundImage")));
 			this->player1_5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-<<<<<<< HEAD
-			this->player1_5->Location = System::Drawing::Point(430, 600);
-=======
 			this->player1_5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->player1_5->Location = System::Drawing::Point(504, 550);
->>>>>>> aa4c43f9d36daf744c182fbf5197e3338ea0c56f
 			this->player1_5->Name = L"player1_5";
 			this->player1_5->Size = System::Drawing::Size(75, 100);
 			this->player1_5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -391,12 +367,8 @@ private: System::Windows::Forms::PictureBox^  player3_table;
 			this->player1_6->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player1_6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_6.BackgroundImage")));
 			this->player1_6->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-<<<<<<< HEAD
-			this->player1_6->Location = System::Drawing::Point(470, 600);
-=======
 			this->player1_6->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->player1_6->Location = System::Drawing::Point(544, 550);
->>>>>>> aa4c43f9d36daf744c182fbf5197e3338ea0c56f
 			this->player1_6->Name = L"player1_6";
 			this->player1_6->Size = System::Drawing::Size(75, 100);
 			this->player1_6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -409,12 +381,8 @@ private: System::Windows::Forms::PictureBox^  player3_table;
 			this->player1_7->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player1_7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_7.BackgroundImage")));
 			this->player1_7->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-<<<<<<< HEAD
-			this->player1_7->Location = System::Drawing::Point(510, 600);
-=======
 			this->player1_7->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->player1_7->Location = System::Drawing::Point(584, 550);
->>>>>>> aa4c43f9d36daf744c182fbf5197e3338ea0c56f
 			this->player1_7->Name = L"player1_7";
 			this->player1_7->Size = System::Drawing::Size(75, 100);
 			this->player1_7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -1117,8 +1085,6 @@ private: System::Windows::Forms::PictureBox^  player3_table;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1008, 662);
-<<<<<<< HEAD
-=======
 			this->Controls->Add(this->player3_table);
 			this->Controls->Add(this->player5_table);
 			this->Controls->Add(this->player4_table);
@@ -1171,7 +1137,6 @@ private: System::Windows::Forms::PictureBox^  player3_table;
 			this->Controls->Add(this->player3_2);
 			this->Controls->Add(this->player3_1);
 			this->Controls->Add(this->player3_0);
->>>>>>> aa4c43f9d36daf744c182fbf5197e3338ea0c56f
 			this->Controls->Add(this->player1_7);
 			this->Controls->Add(this->player1_6);
 			this->Controls->Add(this->player1_5);
@@ -1180,12 +1145,8 @@ private: System::Windows::Forms::PictureBox^  player3_table;
 			this->Controls->Add(this->player1_2);
 			this->Controls->Add(this->player1_1);
 			this->Controls->Add(this->player1_0);
-<<<<<<< HEAD
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-=======
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
->>>>>>> aa4c43f9d36daf744c182fbf5197e3338ea0c56f
 			this->Name = L"GameForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"WHIST";
