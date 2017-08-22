@@ -31,11 +31,11 @@ vector <Card*> createVector(int val)
 
 int checkingCard(Player* player, Card* card, vector <Card*> cardsOnTable)
 {
-	if (card->type == cardsOnTable.begin.type)
+	if (card->type == cardsOnTable[0]->type)
 		return 1;
 
-	for (size_t i = 0; i < player->cards.size; i++)
-		if (player->cards[i]->type == cardsOnTable.begin.type)
+	for (size_t i = 0; i < player->cards.size(); i++)
+		if (player->cards[i]->type == cardsOnTable[0]->type)
 			return 0;
 
 	return 1;
@@ -52,7 +52,7 @@ int points(vector <Card*> cardsOnTable, Player* player)
 
 		// King of hearts
 	case (0):
-		for (size_t i = 0; i < cardsOnTable.size; i++)
+		for (size_t i = 0; i < cardsOnTable.size(); i++)
 			if (cardsOnTable[i]->type == 2 && cardsOnTable[i]->val == 13)
 				Points = Points -80;
 		if (player->game == 0)
@@ -60,7 +60,7 @@ int points(vector <Card*> cardsOnTable, Player* player)
 		
 		// Ten of clubs
 	case (1):
-		for (size_t i = 0; i < cardsOnTable.size; i++)
+		for (size_t i = 0; i < cardsOnTable.size(); i++)
 			if (cardsOnTable[i]->type == 0 && cardsOnTable[i]->val == 10)
 				Points = Points + 80;
 		if (player->game == 1)
@@ -68,7 +68,7 @@ int points(vector <Card*> cardsOnTable, Player* player)
 
 		// Queens
 	case (2):
-		for (size_t i = 0; i < cardsOnTable.size; i++)
+		for (size_t i = 0; i < cardsOnTable.size(); i++)
 			if (cardsOnTable[i]->val == 12)
 				Points = Points - 20;
 		if (player->game == 2)
@@ -76,7 +76,7 @@ int points(vector <Card*> cardsOnTable, Player* player)
 
 		// Diamonds
 	case (3):
-		for (size_t i = 0; i < cardsOnTable.size; i++)
+		for (size_t i = 0; i < cardsOnTable.size(); i++)
 			if (cardsOnTable[i]->type == 1)
 				Points = Points - 10;
 		if (player->game == 3)
@@ -93,6 +93,8 @@ int points(vector <Card*> cardsOnTable, Player* player)
 		break;
 
 	}
+
+	return Points;
 }
 
 int main()
