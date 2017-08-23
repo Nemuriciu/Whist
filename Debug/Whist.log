@@ -1,4 +1,2 @@
 ﻿  main.cpp
-c:\users\vlad\desktop\whist\whist\MenuForm.h(164): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned int', possible loss of data
-c:\users\vlad\desktop\whist\whist\MenuForm.h(184): warning C4018: '<': signed/unsigned mismatch
   Whist.vcxproj -> C:\Users\Vlad\Desktop\Whist\Debug\Whist.exe

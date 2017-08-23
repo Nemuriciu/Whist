@@ -19,10 +19,14 @@ namespace Whist {
 	public:
 		static Main *main = new Main();
 		static Player::Games currentGame;
+		static int currentPlayer = 1;
 		Button^  playCard;
 		PictureBox^  selectedCard;
-	public: System::Windows::Forms::Button^  button1;
-			Table ^table;
+	public: System::Windows::Forms::Button^  openTable;
+
+		System::Windows::Forms::Label^  gameInfo;
+	public:
+		Table ^table;
 		
 
 	public:
@@ -226,7 +230,8 @@ namespace Whist {
 			this->player5_table = (gcnew System::Windows::Forms::PictureBox());
 			this->player3_table = (gcnew System::Windows::Forms::PictureBox());
 			this->playCard = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->openTable = (gcnew System::Windows::Forms::Button());
+			this->gameInfo = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player1_0))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player1_2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player1_1))->BeginInit();
@@ -300,9 +305,9 @@ namespace Whist {
 			// player1_2
 			// 
 			this->player1_2->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->player1_2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_2.BackgroundImage")));
 			this->player1_2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player1_2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->player1_2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_2.Image")));
 			this->player1_2->Location = System::Drawing::Point(384, 550);
 			this->player1_2->Name = L"player1_2";
 			this->player1_2->Size = System::Drawing::Size(75, 100);
@@ -314,9 +319,9 @@ namespace Whist {
 			// player1_1
 			// 
 			this->player1_1->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->player1_1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_1.BackgroundImage")));
 			this->player1_1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player1_1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->player1_1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_1.Image")));
 			this->player1_1->Location = System::Drawing::Point(344, 550);
 			this->player1_1->Name = L"player1_1";
 			this->player1_1->Size = System::Drawing::Size(75, 100);
@@ -328,9 +333,9 @@ namespace Whist {
 			// player1_3
 			// 
 			this->player1_3->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->player1_3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_3.BackgroundImage")));
 			this->player1_3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player1_3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->player1_3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_3.Image")));
 			this->player1_3->Location = System::Drawing::Point(424, 550);
 			this->player1_3->Name = L"player1_3";
 			this->player1_3->Size = System::Drawing::Size(75, 100);
@@ -342,9 +347,9 @@ namespace Whist {
 			// player1_4
 			// 
 			this->player1_4->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->player1_4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_4.BackgroundImage")));
 			this->player1_4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player1_4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->player1_4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_4.Image")));
 			this->player1_4->Location = System::Drawing::Point(464, 550);
 			this->player1_4->Name = L"player1_4";
 			this->player1_4->Size = System::Drawing::Size(75, 100);
@@ -356,9 +361,9 @@ namespace Whist {
 			// player1_5
 			// 
 			this->player1_5->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->player1_5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_5.BackgroundImage")));
 			this->player1_5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player1_5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->player1_5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_5.Image")));
 			this->player1_5->Location = System::Drawing::Point(504, 550);
 			this->player1_5->Name = L"player1_5";
 			this->player1_5->Size = System::Drawing::Size(75, 100);
@@ -370,9 +375,9 @@ namespace Whist {
 			// player1_6
 			// 
 			this->player1_6->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->player1_6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_6.BackgroundImage")));
 			this->player1_6->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player1_6->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->player1_6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_6.Image")));
 			this->player1_6->Location = System::Drawing::Point(544, 550);
 			this->player1_6->Name = L"player1_6";
 			this->player1_6->Size = System::Drawing::Size(75, 100);
@@ -384,9 +389,9 @@ namespace Whist {
 			// player1_7
 			// 
 			this->player1_7->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->player1_7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_7.BackgroundImage")));
 			this->player1_7->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player1_7->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->player1_7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_7.Image")));
 			this->player1_7->Location = System::Drawing::Point(584, 550);
 			this->player1_7->Name = L"player1_7";
 			this->player1_7->Size = System::Drawing::Size(75, 100);
@@ -1088,7 +1093,6 @@ namespace Whist {
 			this->playCard->AutoSize = true;
 			this->playCard->BackColor = System::Drawing::Color::Cornsilk;
 			this->playCard->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->playCard->Enabled = false;
 			this->playCard->FlatAppearance->BorderSize = 0;
 			this->playCard->Font = (gcnew System::Drawing::Font(L"Verdana", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -1102,23 +1106,35 @@ namespace Whist {
 			this->playCard->UseVisualStyleBackColor = false;
 			this->playCard->Click += gcnew System::EventHandler(this, &GameForm::choose_Card);
 			// 
-			// button1
+			// openTable
 			// 
-			this->button1->AutoSize = true;
-			this->button1->BackColor = System::Drawing::Color::Cornsilk;
-			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button1->FlatAppearance->BorderSize = 0;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Verdana", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->openTable->AutoSize = true;
+			this->openTable->BackColor = System::Drawing::Color::Cornsilk;
+			this->openTable->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->openTable->FlatAppearance->BorderSize = 0;
+			this->openTable->Font = (gcnew System::Drawing::Font(L"Verdana", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->ForeColor = System::Drawing::Color::Black;
-			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
-			this->button1->Location = System::Drawing::Point(683, 599);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(140, 60);
-			this->button1->TabIndex = 61;
-			this->button1->Text = L"Select Game";
-			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &GameForm::selectGame);
+			this->openTable->ForeColor = System::Drawing::Color::Black;
+			this->openTable->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"openTable.Image")));
+			this->openTable->Location = System::Drawing::Point(683, 599);
+			this->openTable->Name = L"openTable";
+			this->openTable->Size = System::Drawing::Size(140, 60);
+			this->openTable->TabIndex = 61;
+			this->openTable->Text = L"Select Game";
+			this->openTable->UseVisualStyleBackColor = false;
+			this->openTable->Click += gcnew System::EventHandler(this, &GameForm::selectGame);
+			// 
+			// gameInfo
+			// 
+			this->gameInfo->BackColor = System::Drawing::Color::Transparent;
+			this->gameInfo->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->gameInfo->ForeColor = System::Drawing::Color::Red;
+			this->gameInfo->Location = System::Drawing::Point(300, 161);
+			this->gameInfo->Name = L"gameInfo";
+			this->gameInfo->Size = System::Drawing::Size(359, 43);
+			this->gameInfo->TabIndex = 62;
+			this->gameInfo->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// GameForm
 			// 
@@ -1127,7 +1143,7 @@ namespace Whist {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1008, 662);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->openTable);
 			this->Controls->Add(this->playCard);
 			this->Controls->Add(this->player3_table);
 			this->Controls->Add(this->player5_table);
@@ -1189,6 +1205,7 @@ namespace Whist {
 			this->Controls->Add(this->player1_1);
 			this->Controls->Add(this->player1_0);
 			this->Controls->Add(this->player1_name);
+			this->Controls->Add(this->gameInfo);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
@@ -1261,6 +1278,8 @@ namespace Whist {
 		{
 			obj->Location = Point(obj->Location.X, 550);
 			selectedCard = nullptr;
+			main->players[0]->selectedCard = NULL;
+			return;
 		}
 		else
 		{
@@ -1271,17 +1290,163 @@ namespace Whist {
 			selectedCard = obj;
 		}
 
-		if (selectedCard != nullptr) //TODO: check valid move
-			playCard->Enabled = true;
-		else
-			playCard->Enabled = false;
+		switch (selectedCard->Location.X)
+		{
+		case 304:
+			main->players[0]->selectedCard = main->players[0]->cards[0];
+			break;
+		case 344:
+			main->players[0]->selectedCard = main->players[0]->cards[1];
+			break;
+		case 384:
+			main->players[0]->selectedCard = main->players[0]->cards[2];
+			break;
+		case 424:
+			main->players[0]->selectedCard = main->players[0]->cards[3];
+			break;
+		case 464:
+			main->players[0]->selectedCard = main->players[0]->cards[4];
+			break;
+		case 504:
+			main->players[0]->selectedCard = main->players[0]->cards[5];
+			break;
+		case 544:
+			main->players[0]->selectedCard = main->players[0]->cards[6];
+			break;
+		case 584:
+			main->players[0]->selectedCard = main->players[0]->cards[7];
+			break;
+		}
 	}
+
 	private: System::Void choose_Card(System::Object^  sender, System::EventArgs^  e) {
 		Button ^obj = safe_cast<Button^>(sender);
+
+		if (selectedCard != nullptr && currentGame != (Player::Games)99)
+		{
+			if (main->cardsOnTable.size() > 0) {
+				if (!main->checkingCard(main->players[0], main->players[0]->selectedCard, main->cardsOnTable))
+				{
+					gameInfo->ForeColor = Color::Red;
+					gameInfo->Text = "Invalid move. Try Again"; //TODO: main->cardsOnTable[0]->type "to play."
+					return;
+				}
+			}
+			
+			gameInfo->Text = "";
+			player1_table->Image = selectedCard->Image;
+			player1_table->Visible = true;
+			//TODO: Rearrange cards in hand.
+			selectedCard->Visible = false;
+			obj->Enabled = false;
+
+			// gameBehavior();
+		}		
 	}
+
 	private: System::Void selectGame(System::Object^  sender, System::EventArgs^  e) {
 
 		table->ShowDialog();
+		openTable->Enabled = false;
+		currentGame = Table::currentGame;
+		gameInfo->ForeColor = Color::Goldenrod;
+		
+		String ^str;
+
+		switch (currentGame)
+		{
+		case Player::King_of_Hearts:
+			str = "King of Hearts";
+			break;
+		case Player::Ten_of_Clubs:
+			str = "Ten of Clubs";
+			break;
+		case Player::Queens:
+			str = "Queend";
+			break;
+		case Player::Diamonds:
+			str = "Diamonds";
+			break;
+		case Player::Whist:
+			str = "Whist";
+			break;
+		case Player::Rentz:
+			str = "Rentz";
+			break;
+		case Player::Totals:
+			str = "Totals";
+			break;
+		case Player::Acool:
+			str = "Acool";
+			break;
+		}
+
+		gameInfo->Text = str + " selected. Play a Card";
 	}
+
+	/* Game Behavior */
+	private: System::Void gameBehavior() {
+
+		if (currentPlayer == 1)
+		{
+
+		}
+		else
+		{
+			selectRandomGameType(currentPlayer);
+		}
+
+		for (size_t i = 0; i < main->num_pl; i++)
+		{
+			if ((currentPlayer + i) % currentPlayer == 1)
+			{
+
+			}
+			else selectRandomCard((currentPlayer + i) % currentPlayer);
+		}
+	}
+
+	private: System::Void selectRandomGameType(int player) {
+		for (size_t i = 0; i < 8; i++)
+		{
+			if (!main->checkingTabel(main->players[player - 1], i, main->tabel))
+			{
+				main->markGame(main->players[player - 1], i, main->tabel);
+				
+				String ^str = System::Convert::ToString((player - 1) * 8 + i);
+				str = "button" + str;
+				Button ^btn = safe_cast<Button^>(table->Controls->Find(str, true)[0]);
+				btn->BackColor = Color::Red;
+				btn->Enabled = false;
+
+				break;
+			}				
+		}
+	}
+
+	private: System::Void selectRandomCard(int playerId) {
+		Player *player = main->players[playerId - 1];
+
+		if (main->cardsOnTable.size() > 0) {
+			for (size_t i = 0; i < player->cards.size(); i++)
+				if (main->checkingCard(player, player->cards[i], main->cardsOnTable))
+				{
+					//TODO: playerID_table = player->cards[i]
+					break;
+				}
+
+			return;
+		}
+
+		//TODO: playerID_table = player->cards[0]			
+	}
+
+	/*
+	private: System::Void wait(unsigned int timeout)
+	{
+		timeout += clock();
+		while (clock() < timeout) continue;
+	}
+	 */
 };
 }

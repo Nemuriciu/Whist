@@ -10,7 +10,7 @@ public:
 	~Main();
 
 	unsigned int num_pl = 6;
-	unsigned int tabel[6][8];
+	int tabel[6][8];
 	vector <Card*> cards;
 	vector <Player*> players;
 	vector <Card*> cardsOnTable;
@@ -18,7 +18,7 @@ public:
 	vector <Card*> createVector(int val);
 	int checkingCard(Player* player, Card* card, vector <Card*> cardsOnTable);
 	int points(vector <Card*> cardsOnTable, Player* player);
-	void markGame(Player player, int game, int (&tabel)[6][8]);
-	int checkingTabel(Player player, int game, int(&tabel)[6][8]); 
+	void markGame(Player *player, int game, int (&tabel)[6][8]);
+	int checkingTabel(Player *player, int game, int(&tabel)[6][8]); 
 };
 

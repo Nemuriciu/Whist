@@ -161,7 +161,7 @@ namespace Whist {
 		if (numPlayers->SelectedItems->Count != 0)
 		{ 
 			String ^str = numPlayers->SelectedItem->ToString();
-			game->main->num_pl = Convert::ToUInt64(str);
+			game->main->num_pl = Convert::ToUInt32(str);
 
 			this->Hide();
 			game->ShowDialog();
@@ -181,7 +181,7 @@ namespace Whist {
 			numPlayers->Visible = false;
 	}
 	private: System::Void ItemCheck(System::Object^  sender, System::Windows::Forms::ItemCheckEventArgs^  e) {
-		for (size_t i = 0; i < numPlayers->Items->Count; i++)
+		for (int i = 0; i < numPlayers->Items->Count; i++)
 		{
 			if (i != e->Index) numPlayers->SetItemChecked(i, false);
 		}

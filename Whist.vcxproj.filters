@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Resource Files\CardsImages">
-      <UniqueIdentifier>{7d5b28b2-2932-4096-83f6-32446661e94a}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Card.h">
@@ -49,21 +46,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Images\WhistBackground.jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Images\GameBck.jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Images\Cards\2_of_clubs.png">
-      <Filter>Resource Files\CardsImages</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="MenuForm.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="GameForm.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

@@ -1,5 +1,4 @@
 #pragma once
-#include "GameForm.h"
 
 namespace Whist {
 
@@ -15,6 +14,7 @@ namespace Whist {
 	/// </summary>
 	public ref class Table : public System::Windows::Forms::Form
 	{
+	public: static Player::Games currentGame = (Player::Games)99;
 	public:
 		Table(void)
 		{
@@ -90,55 +90,6 @@ namespace Whist {
 	private: System::Windows::Forms::Button^  button46;
 	private: System::Windows::Forms::Button^  button47;
 	private: System::Windows::Forms::Button^  button48;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -1052,24 +1003,23 @@ namespace Whist {
 	private: System::Void chooseGameType(System::Object^  sender, System::EventArgs^  e) {
 		
 		Button ^obj = safe_cast<Button^>(sender);
-		Player::Games game;
 
 		if (obj->Text == "King of Hearts")
-			game = Player::Games::King_of_Hearts;
+			currentGame = Player::Games::King_of_Hearts;
 		else if (obj->Text == "10 of Clubs")
-			game = Player::Games::Ten_of_Clubs;
+			currentGame = Player::Games::Ten_of_Clubs;
 		else if (obj->Text == "Queens")
-			game = Player::Games::Queens;
+			currentGame = Player::Games::Queens;
 		else if (obj->Text == "Diamonds")
-			game = Player::Games::Diamonds;
+			currentGame = Player::Games::Diamonds;
 		else if (obj->Text == "Whist")
-			game = Player::Games::Whist;
+			currentGame = Player::Games::Whist;
 		else if (obj->Text == "Rentz")
-			game = Player::Games::Rentz;
+			currentGame = Player::Games::Rentz;
 		else if (obj->Text == "Totals")
-			game = Player::Games::Totals;
+			currentGame = Player::Games::Totals;
 		else if (obj->Text == "Acool")
-			game = Player::Games::Acool;
+			currentGame = Player::Games::Acool;
 
 		obj->BackColor = Color::Red;
 		obj->Enabled = false;
