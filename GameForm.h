@@ -1079,16 +1079,17 @@ namespace Whist {
 			// playCard
 			// 
 			this->playCard->AutoSize = true;
-			this->playCard->BackColor = System::Drawing::Color::Moccasin;
+			this->playCard->BackColor = System::Drawing::Color::Cornsilk;
+			this->playCard->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->playCard->Enabled = false;
 			this->playCard->FlatAppearance->BorderSize = 0;
-			this->playCard->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->playCard->Font = (gcnew System::Drawing::Font(L"Verdana", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->playCard->ForeColor = System::Drawing::Color::Black;
-			this->playCard->Location = System::Drawing::Point(700, 574);
+			this->playCard->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"playCard.Image")));
+			this->playCard->Location = System::Drawing::Point(670, 570);
 			this->playCard->Name = L"playCard";
-			this->playCard->Size = System::Drawing::Size(90, 45);
+			this->playCard->Size = System::Drawing::Size(104, 60);
 			this->playCard->TabIndex = 60;
 			this->playCard->Text = L"Choose";
 			this->playCard->UseVisualStyleBackColor = false;
@@ -1164,6 +1165,7 @@ namespace Whist {
 			this->Controls->Add(this->player1_name);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"GameForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"WHIST";
