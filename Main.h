@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include "Player.h"
+#include "GameForm.h"
 
 class Main
 {

@@ -37,6 +37,8 @@ namespace Whist {
 			//
 			//TODO: Add the constructor code here
 			//
+
+
 		}
 
 	protected:
@@ -406,7 +408,7 @@ namespace Whist {
 			this->player3_0->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player3_0.BackgroundImage")));
 			this->player3_0->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player3_0->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player3_0->Location = System::Drawing::Point(12, 395);
+			this->player3_0->Location = System::Drawing::Point(17, 121);
 			this->player3_0->Name = L"player3_0";
 			this->player3_0->Size = System::Drawing::Size(75, 100);
 			this->player3_0->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -419,7 +421,7 @@ namespace Whist {
 			this->player3_1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player3_1.BackgroundImage")));
 			this->player3_1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player3_1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player3_1->Location = System::Drawing::Point(12, 405);
+			this->player3_1->Location = System::Drawing::Point(17, 131);
 			this->player3_1->Name = L"player3_1";
 			this->player3_1->Size = System::Drawing::Size(75, 100);
 			this->player3_1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -432,7 +434,7 @@ namespace Whist {
 			this->player3_2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player3_2.BackgroundImage")));
 			this->player3_2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player3_2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player3_2->Location = System::Drawing::Point(12, 415);
+			this->player3_2->Location = System::Drawing::Point(17, 141);
 			this->player3_2->Name = L"player3_2";
 			this->player3_2->Size = System::Drawing::Size(75, 100);
 			this->player3_2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -445,7 +447,7 @@ namespace Whist {
 			this->player3_3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player3_3.BackgroundImage")));
 			this->player3_3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player3_3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player3_3->Location = System::Drawing::Point(12, 425);
+			this->player3_3->Location = System::Drawing::Point(17, 151);
 			this->player3_3->Name = L"player3_3";
 			this->player3_3->Size = System::Drawing::Size(75, 100);
 			this->player3_3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -458,7 +460,7 @@ namespace Whist {
 			this->player3_4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player3_4.BackgroundImage")));
 			this->player3_4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player3_4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player3_4->Location = System::Drawing::Point(12, 435);
+			this->player3_4->Location = System::Drawing::Point(17, 161);
 			this->player3_4->Name = L"player3_4";
 			this->player3_4->Size = System::Drawing::Size(75, 100);
 			this->player3_4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -471,7 +473,7 @@ namespace Whist {
 			this->player3_5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player3_5.BackgroundImage")));
 			this->player3_5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player3_5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player3_5->Location = System::Drawing::Point(12, 445);
+			this->player3_5->Location = System::Drawing::Point(17, 171);
 			this->player3_5->Name = L"player3_5";
 			this->player3_5->Size = System::Drawing::Size(75, 100);
 			this->player3_5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -484,7 +486,7 @@ namespace Whist {
 			this->player3_6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player3_6.BackgroundImage")));
 			this->player3_6->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player3_6->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player3_6->Location = System::Drawing::Point(12, 455);
+			this->player3_6->Location = System::Drawing::Point(17, 181);
 			this->player3_6->Name = L"player3_6";
 			this->player3_6->Size = System::Drawing::Size(75, 100);
 			this->player3_6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -497,7 +499,7 @@ namespace Whist {
 			this->player3_7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player3_7.BackgroundImage")));
 			this->player3_7->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player3_7->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player3_7->Location = System::Drawing::Point(12, 465);
+			this->player3_7->Location = System::Drawing::Point(17, 191);
 			this->player3_7->Name = L"player3_7";
 			this->player3_7->Size = System::Drawing::Size(75, 100);
 			this->player3_7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -510,7 +512,7 @@ namespace Whist {
 			this->player5_7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player5_7.BackgroundImage")));
 			this->player5_7->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player5_7->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player5_7->Location = System::Drawing::Point(12, 191);
+			this->player5_7->Location = System::Drawing::Point(921, 191);
 			this->player5_7->Name = L"player5_7";
 			this->player5_7->Size = System::Drawing::Size(75, 100);
 			this->player5_7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -523,7 +525,7 @@ namespace Whist {
 			this->player5_6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player5_6.BackgroundImage")));
 			this->player5_6->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player5_6->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player5_6->Location = System::Drawing::Point(12, 181);
+			this->player5_6->Location = System::Drawing::Point(921, 181);
 			this->player5_6->Name = L"player5_6";
 			this->player5_6->Size = System::Drawing::Size(75, 100);
 			this->player5_6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -536,7 +538,7 @@ namespace Whist {
 			this->player5_5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player5_5.BackgroundImage")));
 			this->player5_5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player5_5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player5_5->Location = System::Drawing::Point(12, 171);
+			this->player5_5->Location = System::Drawing::Point(921, 171);
 			this->player5_5->Name = L"player5_5";
 			this->player5_5->Size = System::Drawing::Size(75, 100);
 			this->player5_5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -549,7 +551,7 @@ namespace Whist {
 			this->player5_4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player5_4.BackgroundImage")));
 			this->player5_4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player5_4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player5_4->Location = System::Drawing::Point(12, 161);
+			this->player5_4->Location = System::Drawing::Point(921, 161);
 			this->player5_4->Name = L"player5_4";
 			this->player5_4->Size = System::Drawing::Size(75, 100);
 			this->player5_4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -562,7 +564,7 @@ namespace Whist {
 			this->player5_3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player5_3.BackgroundImage")));
 			this->player5_3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player5_3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player5_3->Location = System::Drawing::Point(12, 151);
+			this->player5_3->Location = System::Drawing::Point(921, 151);
 			this->player5_3->Name = L"player5_3";
 			this->player5_3->Size = System::Drawing::Size(75, 100);
 			this->player5_3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -575,7 +577,7 @@ namespace Whist {
 			this->player5_2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player5_2.BackgroundImage")));
 			this->player5_2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player5_2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player5_2->Location = System::Drawing::Point(12, 141);
+			this->player5_2->Location = System::Drawing::Point(921, 141);
 			this->player5_2->Name = L"player5_2";
 			this->player5_2->Size = System::Drawing::Size(75, 100);
 			this->player5_2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -588,7 +590,7 @@ namespace Whist {
 			this->player5_1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player5_1.BackgroundImage")));
 			this->player5_1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player5_1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player5_1->Location = System::Drawing::Point(12, 131);
+			this->player5_1->Location = System::Drawing::Point(921, 131);
 			this->player5_1->Name = L"player5_1";
 			this->player5_1->Size = System::Drawing::Size(75, 100);
 			this->player5_1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -601,7 +603,7 @@ namespace Whist {
 			this->player5_0->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player5_0.BackgroundImage")));
 			this->player5_0->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player5_0->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player5_0->Location = System::Drawing::Point(12, 121);
+			this->player5_0->Location = System::Drawing::Point(921, 121);
 			this->player5_0->Name = L"player5_0";
 			this->player5_0->Size = System::Drawing::Size(75, 100);
 			this->player5_0->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -614,7 +616,7 @@ namespace Whist {
 			this->player4_7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player4_7.BackgroundImage")));
 			this->player4_7->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player4_7->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player4_7->Location = System::Drawing::Point(921, 465);
+			this->player4_7->Location = System::Drawing::Point(584, 12);
 			this->player4_7->Name = L"player4_7";
 			this->player4_7->Size = System::Drawing::Size(75, 100);
 			this->player4_7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -627,7 +629,7 @@ namespace Whist {
 			this->player4_6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player4_6.BackgroundImage")));
 			this->player4_6->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player4_6->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player4_6->Location = System::Drawing::Point(921, 455);
+			this->player4_6->Location = System::Drawing::Point(544, 12);
 			this->player4_6->Name = L"player4_6";
 			this->player4_6->Size = System::Drawing::Size(75, 100);
 			this->player4_6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -640,7 +642,7 @@ namespace Whist {
 			this->player4_5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player4_5.BackgroundImage")));
 			this->player4_5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player4_5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player4_5->Location = System::Drawing::Point(921, 445);
+			this->player4_5->Location = System::Drawing::Point(504, 12);
 			this->player4_5->Name = L"player4_5";
 			this->player4_5->Size = System::Drawing::Size(75, 100);
 			this->player4_5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -653,7 +655,7 @@ namespace Whist {
 			this->player4_4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player4_4.BackgroundImage")));
 			this->player4_4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player4_4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player4_4->Location = System::Drawing::Point(921, 435);
+			this->player4_4->Location = System::Drawing::Point(464, 12);
 			this->player4_4->Name = L"player4_4";
 			this->player4_4->Size = System::Drawing::Size(75, 100);
 			this->player4_4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -666,7 +668,7 @@ namespace Whist {
 			this->player4_3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player4_3.BackgroundImage")));
 			this->player4_3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player4_3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player4_3->Location = System::Drawing::Point(921, 425);
+			this->player4_3->Location = System::Drawing::Point(424, 12);
 			this->player4_3->Name = L"player4_3";
 			this->player4_3->Size = System::Drawing::Size(75, 100);
 			this->player4_3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -679,7 +681,7 @@ namespace Whist {
 			this->player4_2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player4_2.BackgroundImage")));
 			this->player4_2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player4_2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player4_2->Location = System::Drawing::Point(921, 415);
+			this->player4_2->Location = System::Drawing::Point(384, 12);
 			this->player4_2->Name = L"player4_2";
 			this->player4_2->Size = System::Drawing::Size(75, 100);
 			this->player4_2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -692,7 +694,7 @@ namespace Whist {
 			this->player4_1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player4_1.BackgroundImage")));
 			this->player4_1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player4_1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player4_1->Location = System::Drawing::Point(921, 405);
+			this->player4_1->Location = System::Drawing::Point(344, 12);
 			this->player4_1->Name = L"player4_1";
 			this->player4_1->Size = System::Drawing::Size(75, 100);
 			this->player4_1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -705,7 +707,7 @@ namespace Whist {
 			this->player4_0->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player4_0.BackgroundImage")));
 			this->player4_0->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player4_0->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player4_0->Location = System::Drawing::Point(921, 395);
+			this->player4_0->Location = System::Drawing::Point(304, 12);
 			this->player4_0->Name = L"player4_0";
 			this->player4_0->Size = System::Drawing::Size(75, 100);
 			this->player4_0->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -718,7 +720,7 @@ namespace Whist {
 			this->player6_7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player6_7.BackgroundImage")));
 			this->player6_7->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player6_7->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player6_7->Location = System::Drawing::Point(921, 191);
+			this->player6_7->Location = System::Drawing::Point(921, 465);
 			this->player6_7->Name = L"player6_7";
 			this->player6_7->Size = System::Drawing::Size(75, 100);
 			this->player6_7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -731,7 +733,7 @@ namespace Whist {
 			this->player6_6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player6_6.BackgroundImage")));
 			this->player6_6->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player6_6->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player6_6->Location = System::Drawing::Point(921, 181);
+			this->player6_6->Location = System::Drawing::Point(921, 455);
 			this->player6_6->Name = L"player6_6";
 			this->player6_6->Size = System::Drawing::Size(75, 100);
 			this->player6_6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -744,7 +746,7 @@ namespace Whist {
 			this->player6_5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player6_5.BackgroundImage")));
 			this->player6_5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player6_5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player6_5->Location = System::Drawing::Point(921, 171);
+			this->player6_5->Location = System::Drawing::Point(921, 445);
 			this->player6_5->Name = L"player6_5";
 			this->player6_5->Size = System::Drawing::Size(75, 100);
 			this->player6_5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -757,7 +759,7 @@ namespace Whist {
 			this->player6_4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player6_4.BackgroundImage")));
 			this->player6_4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player6_4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player6_4->Location = System::Drawing::Point(921, 161);
+			this->player6_4->Location = System::Drawing::Point(921, 435);
 			this->player6_4->Name = L"player6_4";
 			this->player6_4->Size = System::Drawing::Size(75, 100);
 			this->player6_4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -770,7 +772,7 @@ namespace Whist {
 			this->player6_3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player6_3.BackgroundImage")));
 			this->player6_3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player6_3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player6_3->Location = System::Drawing::Point(921, 151);
+			this->player6_3->Location = System::Drawing::Point(921, 425);
 			this->player6_3->Name = L"player6_3";
 			this->player6_3->Size = System::Drawing::Size(75, 100);
 			this->player6_3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -783,7 +785,7 @@ namespace Whist {
 			this->player6_2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player6_2.BackgroundImage")));
 			this->player6_2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player6_2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player6_2->Location = System::Drawing::Point(921, 141);
+			this->player6_2->Location = System::Drawing::Point(921, 415);
 			this->player6_2->Name = L"player6_2";
 			this->player6_2->Size = System::Drawing::Size(75, 100);
 			this->player6_2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -796,7 +798,7 @@ namespace Whist {
 			this->player6_1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player6_1.BackgroundImage")));
 			this->player6_1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player6_1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player6_1->Location = System::Drawing::Point(921, 131);
+			this->player6_1->Location = System::Drawing::Point(921, 405);
 			this->player6_1->Name = L"player6_1";
 			this->player6_1->Size = System::Drawing::Size(75, 100);
 			this->player6_1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -809,7 +811,7 @@ namespace Whist {
 			this->player6_0->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player6_0.BackgroundImage")));
 			this->player6_0->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player6_0->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player6_0->Location = System::Drawing::Point(921, 121);
+			this->player6_0->Location = System::Drawing::Point(921, 395);
 			this->player6_0->Name = L"player6_0";
 			this->player6_0->Size = System::Drawing::Size(75, 100);
 			this->player6_0->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -822,7 +824,7 @@ namespace Whist {
 			this->player2_7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player2_7.BackgroundImage")));
 			this->player2_7->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player2_7->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player2_7->Location = System::Drawing::Point(584, 12);
+			this->player2_7->Location = System::Drawing::Point(17, 465);
 			this->player2_7->Name = L"player2_7";
 			this->player2_7->Size = System::Drawing::Size(75, 100);
 			this->player2_7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -835,7 +837,7 @@ namespace Whist {
 			this->player2_6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player2_6.BackgroundImage")));
 			this->player2_6->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player2_6->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player2_6->Location = System::Drawing::Point(544, 12);
+			this->player2_6->Location = System::Drawing::Point(17, 455);
 			this->player2_6->Name = L"player2_6";
 			this->player2_6->Size = System::Drawing::Size(75, 100);
 			this->player2_6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -848,7 +850,7 @@ namespace Whist {
 			this->player2_5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player2_5.BackgroundImage")));
 			this->player2_5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player2_5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player2_5->Location = System::Drawing::Point(504, 12);
+			this->player2_5->Location = System::Drawing::Point(17, 445);
 			this->player2_5->Name = L"player2_5";
 			this->player2_5->Size = System::Drawing::Size(75, 100);
 			this->player2_5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -861,7 +863,7 @@ namespace Whist {
 			this->player2_4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player2_4.BackgroundImage")));
 			this->player2_4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player2_4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player2_4->Location = System::Drawing::Point(464, 12);
+			this->player2_4->Location = System::Drawing::Point(17, 435);
 			this->player2_4->Name = L"player2_4";
 			this->player2_4->Size = System::Drawing::Size(75, 100);
 			this->player2_4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -874,7 +876,7 @@ namespace Whist {
 			this->player2_3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player2_3.BackgroundImage")));
 			this->player2_3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player2_3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player2_3->Location = System::Drawing::Point(424, 12);
+			this->player2_3->Location = System::Drawing::Point(17, 425);
 			this->player2_3->Name = L"player2_3";
 			this->player2_3->Size = System::Drawing::Size(75, 100);
 			this->player2_3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -887,7 +889,7 @@ namespace Whist {
 			this->player2_2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player2_2.BackgroundImage")));
 			this->player2_2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player2_2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player2_2->Location = System::Drawing::Point(384, 12);
+			this->player2_2->Location = System::Drawing::Point(17, 415);
 			this->player2_2->Name = L"player2_2";
 			this->player2_2->Size = System::Drawing::Size(75, 100);
 			this->player2_2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -900,7 +902,7 @@ namespace Whist {
 			this->player2_1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player2_1.BackgroundImage")));
 			this->player2_1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player2_1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player2_1->Location = System::Drawing::Point(344, 12);
+			this->player2_1->Location = System::Drawing::Point(17, 405);
 			this->player2_1->Name = L"player2_1";
 			this->player2_1->Size = System::Drawing::Size(75, 100);
 			this->player2_1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -913,7 +915,7 @@ namespace Whist {
 			this->player2_0->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player2_0.BackgroundImage")));
 			this->player2_0->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player2_0->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player2_0->Location = System::Drawing::Point(304, 12);
+			this->player2_0->Location = System::Drawing::Point(17, 397);
 			this->player2_0->Name = L"player2_0";
 			this->player2_0->Size = System::Drawing::Size(75, 100);
 			this->player2_0->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -943,7 +945,7 @@ namespace Whist {
 			this->player2_name->Font = (gcnew System::Drawing::Font(L"Verdana", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->player2_name->ForeColor = System::Drawing::Color::Goldenrod;
-			this->player2_name->Location = System::Drawing::Point(665, 12);
+			this->player2_name->Location = System::Drawing::Point(12, 369);
 			this->player2_name->Name = L"player2_name";
 			this->player2_name->Size = System::Drawing::Size(91, 25);
 			this->player2_name->TabIndex = 49;
@@ -958,7 +960,7 @@ namespace Whist {
 			this->player3_name->Font = (gcnew System::Drawing::Font(L"Verdana", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->player3_name->ForeColor = System::Drawing::Color::Goldenrod;
-			this->player3_name->Location = System::Drawing::Point(12, 358);
+			this->player3_name->Location = System::Drawing::Point(12, 87);
 			this->player3_name->Name = L"player3_name";
 			this->player3_name->Size = System::Drawing::Size(91, 25);
 			this->player3_name->TabIndex = 50;
@@ -973,7 +975,7 @@ namespace Whist {
 			this->player4_name->Font = (gcnew System::Drawing::Font(L"Verdana", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->player4_name->ForeColor = System::Drawing::Color::Goldenrod;
-			this->player4_name->Location = System::Drawing::Point(905, 358);
+			this->player4_name->Location = System::Drawing::Point(665, 9);
 			this->player4_name->Name = L"player4_name";
 			this->player4_name->Size = System::Drawing::Size(91, 25);
 			this->player4_name->TabIndex = 51;
@@ -988,7 +990,7 @@ namespace Whist {
 			this->player5_name->Font = (gcnew System::Drawing::Font(L"Verdana", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->player5_name->ForeColor = System::Drawing::Color::Goldenrod;
-			this->player5_name->Location = System::Drawing::Point(12, 87);
+			this->player5_name->Location = System::Drawing::Point(916, 87);
 			this->player5_name->Name = L"player5_name";
 			this->player5_name->Size = System::Drawing::Size(91, 25);
 			this->player5_name->TabIndex = 52;
@@ -1003,7 +1005,7 @@ namespace Whist {
 			this->player6_name->Font = (gcnew System::Drawing::Font(L"Verdana", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->player6_name->ForeColor = System::Drawing::Color::Goldenrod;
-			this->player6_name->Location = System::Drawing::Point(905, 87);
+			this->player6_name->Location = System::Drawing::Point(916, 358);
 			this->player6_name->Name = L"player6_name";
 			this->player6_name->Size = System::Drawing::Size(91, 25);
 			this->player6_name->TabIndex = 53;
@@ -1028,7 +1030,7 @@ namespace Whist {
 			this->player2_table->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player2_table->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player2_table->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player2_table->Location = System::Drawing::Point(444, 217);
+			this->player2_table->Location = System::Drawing::Point(304, 358);
 			this->player2_table->Name = L"player2_table";
 			this->player2_table->Size = System::Drawing::Size(75, 100);
 			this->player2_table->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -1041,7 +1043,7 @@ namespace Whist {
 			this->player6_table->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player6_table->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player6_table->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player6_table->Location = System::Drawing::Point(584, 217);
+			this->player6_table->Location = System::Drawing::Point(584, 358);
 			this->player6_table->Name = L"player6_table";
 			this->player6_table->Size = System::Drawing::Size(75, 100);
 			this->player6_table->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -1054,7 +1056,7 @@ namespace Whist {
 			this->player4_table->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player4_table->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player4_table->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player4_table->Location = System::Drawing::Point(584, 358);
+			this->player4_table->Location = System::Drawing::Point(444, 217);
 			this->player4_table->Name = L"player4_table";
 			this->player4_table->Size = System::Drawing::Size(75, 100);
 			this->player4_table->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -1067,7 +1069,7 @@ namespace Whist {
 			this->player5_table->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player5_table->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player5_table->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player5_table->Location = System::Drawing::Point(304, 217);
+			this->player5_table->Location = System::Drawing::Point(584, 217);
 			this->player5_table->Name = L"player5_table";
 			this->player5_table->Size = System::Drawing::Size(75, 100);
 			this->player5_table->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -1080,7 +1082,7 @@ namespace Whist {
 			this->player3_table->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player3_table->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player3_table->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player3_table->Location = System::Drawing::Point(304, 358);
+			this->player3_table->Location = System::Drawing::Point(304, 217);
 			this->player3_table->Name = L"player3_table";
 			this->player3_table->Size = System::Drawing::Size(75, 100);
 			this->player3_table->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;

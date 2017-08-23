@@ -145,7 +145,10 @@ int Main::points(vector <Card*> cardsOnTable, Player* player)
 void Main::markGame(Player *player,int game, int (&tabel)[6][8])
 {
 	tabel[player->numberOfPlayer][game] = 1;
+<<<<<<< HEAD
 	GameForm::currentGame = (Player::Games) game;
+=======
+>>>>>>> 632ee84e64999c1dd4f84474af0f5f1b4293b529
 }
 
 int Main::checkingTabel(Player *player, int game, int (&tabel)[6][8])
