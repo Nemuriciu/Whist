@@ -1229,11 +1229,6 @@ namespace Whist {
 	private: System::Void card_Select(System::Object^  sender, System::EventArgs^  e) {
 		PictureBox ^obj = safe_cast<PictureBox^>(sender);
 
-<<<<<<< HEAD
-		obj->Location.Y -= 30;
-
-		main->
-=======
 		if (selectedCard == obj)
 		{
 			obj->Location = Point(obj->Location.X, 550);
@@ -1254,8 +1249,7 @@ namespace Whist {
 			playCard->Enabled = false;
 	}
 	private: System::Void choose_Card(System::Object^  sender, System::EventArgs^  e) {
-		Button ^obj = safe_cast<Button^>(sender);	
->>>>>>> 51953290587cfcc4eb066435db892e6cd02ce3f1
+		Button ^obj = safe_cast<Button^>(sender);
 	}
 };
 }
