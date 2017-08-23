@@ -1,5 +1,6 @@
 #pragma once
 #include "Main.h"
+#include "Table.h"
 
 namespace Whist {
 
@@ -16,14 +17,19 @@ namespace Whist {
 	public ref class GameForm : public System::Windows::Forms::Form
 	{
 	public:
-		Main *main = new Main();
+		static Main *main = new Main();
+		static Player::Games currentGame;
 		Button^  playCard;
 		PictureBox^  selectedCard;
+	public: System::Windows::Forms::Button^  button1;
+			Table ^table;
+		
 
 	public:
 		GameForm(void)
 		{
 			InitializeComponent();
+			table = gcnew Table();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -220,6 +226,7 @@ namespace Whist {
 			this->player5_table = (gcnew System::Windows::Forms::PictureBox());
 			this->player3_table = (gcnew System::Windows::Forms::PictureBox());
 			this->playCard = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player1_0))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player1_2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player1_1))->BeginInit();
@@ -1087,13 +1094,31 @@ namespace Whist {
 				static_cast<System::Byte>(0)));
 			this->playCard->ForeColor = System::Drawing::Color::Black;
 			this->playCard->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"playCard.Image")));
-			this->playCard->Location = System::Drawing::Point(670, 570);
+			this->playCard->Location = System::Drawing::Point(683, 533);
 			this->playCard->Name = L"playCard";
 			this->playCard->Size = System::Drawing::Size(104, 60);
 			this->playCard->TabIndex = 60;
 			this->playCard->Text = L"Choose";
 			this->playCard->UseVisualStyleBackColor = false;
 			this->playCard->Click += gcnew System::EventHandler(this, &GameForm::choose_Card);
+			// 
+			// button1
+			// 
+			this->button1->AutoSize = true;
+			this->button1->BackColor = System::Drawing::Color::Cornsilk;
+			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button1->FlatAppearance->BorderSize = 0;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Verdana", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::Color::Black;
+			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
+			this->button1->Location = System::Drawing::Point(683, 599);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(140, 60);
+			this->button1->TabIndex = 61;
+			this->button1->Text = L"Select Game";
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &GameForm::selectGame);
 			// 
 			// GameForm
 			// 
@@ -1102,6 +1127,7 @@ namespace Whist {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1008, 662);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->playCard);
 			this->Controls->Add(this->player3_table);
 			this->Controls->Add(this->player5_table);
@@ -1252,6 +1278,10 @@ namespace Whist {
 	}
 	private: System::Void choose_Card(System::Object^  sender, System::EventArgs^  e) {
 		Button ^obj = safe_cast<Button^>(sender);
+	}
+	private: System::Void selectGame(System::Object^  sender, System::EventArgs^  e) {
+
+		table->ShowDialog();
 	}
 };
 }
