@@ -1118,9 +1118,9 @@ namespace Whist {
 				static_cast<System::Byte>(0)));
 			this->openTable->ForeColor = System::Drawing::Color::Black;
 			this->openTable->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"openTable.Image")));
-			this->openTable->Location = System::Drawing::Point(683, 599);
+			this->openTable->Location = System::Drawing::Point(670, 599);
 			this->openTable->Name = L"openTable";
-			this->openTable->Size = System::Drawing::Size(140, 60);
+			this->openTable->Size = System::Drawing::Size(150, 49);
 			this->openTable->TabIndex = 61;
 			this->openTable->Text = L"Select Game";
 			this->openTable->UseVisualStyleBackColor = false;
