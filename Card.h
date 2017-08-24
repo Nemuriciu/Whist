@@ -7,11 +7,13 @@ public class Card
 public:
 	enum Color
 	{
-		Club, Diamond, Heart, Spade
+		Club = 0, Diamond = 1, Heart = 2, Spade = 3
 	};
 
 	int val;
 	Color type;
+	string pathImage;
+
 	Card();
 	Card(int val, Color type);
 	~Card();
