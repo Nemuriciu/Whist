@@ -1,16 +1,2 @@
-<<<<<<< HEAD
 ﻿  main.cpp
-c:\users\vlad\desktop\whist\whist\GameForm.h(1463): warning C4018: '<': signed/unsigned mismatch
   Whist.vcxproj -> C:\Users\Vlad\Desktop\Whist\Debug\Whist.exe
-=======
-<<<<<<< HEAD
-﻿  Card.cpp
-  main.cpp
-  Player.cpp
-  Generating Code...
-  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
-  Whist.vcxproj -> C:\Users\Anca\Documents\GitHub\Whist\Debug\Whist.exe
-=======
-﻿  Whist.vcxproj -> C:\Users\Vlad\Desktop\Whist\Debug\Whist.exe
->>>>>>> e27579eb210ed4b41a04c628cb5ad5bada2c7db9
->>>>>>> 893263865c024a59685c7fc77ad5c79cb0503178

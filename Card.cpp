@@ -31,7 +31,7 @@ Card::Card(int val, Color type)
 		break;
 	}
 
-	this->pathImage = "Images/Cards" + valString +"_of_" + typeString + ".png";
+	this->pathImage = "Images/Cards/" + valString + "_of_" + typeString + ".png";
 }
 
 Card::~Card()
