@@ -1,1 +1,3 @@
-﻿  Whist.vcxproj -> C:\Users\Vlad\Desktop\Whist\Debug\Whist.exe
+﻿  main.cpp
+c:\users\vlad\desktop\whist\whist\GameForm.h(1463): warning C4018: '<': signed/unsigned mismatch
+  Whist.vcxproj -> C:\Users\Vlad\Desktop\Whist\Debug\Whist.exe

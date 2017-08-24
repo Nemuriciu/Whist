@@ -1,6 +1,7 @@
 #pragma once
 #include "Main.h"
 #include "Table.h"
+#include <time.h>
 
 namespace Whist {
 
@@ -1338,7 +1339,7 @@ namespace Whist {
 			gameInfo->Text = "";
 			player1_table->Image = selectedCard->Image;
 			player1_table->Visible = true;
-			//TODO: Rearrange cards in hand.
+
 			selectedCard->Visible = false;
 			obj->Enabled = false;
 
@@ -1443,12 +1444,11 @@ namespace Whist {
 		//TODO: playerID_table = player->cards[0]			
 	}
 
-	/*
+	
 	private: System::Void wait(unsigned int timeout)
 	{
 		timeout += clock();
 		while (clock() < timeout) continue;
 	}
-	 */
 };
 }
