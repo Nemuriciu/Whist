@@ -12,6 +12,8 @@ public:
 
 	int val;
 	Color type;
+	string pathImage;
+
 	Card();
 	Card(int val, Color type);
 	~Card();
