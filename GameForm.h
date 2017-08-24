@@ -1,6 +1,7 @@
 #pragma once
 #include "Main.h"
 #include "Table.h"
+#include <time.h>
 
 namespace Whist {
 
@@ -27,6 +28,15 @@ namespace Whist {
 		System::Windows::Forms::Label^  gameInfo;
 	public:
 		Table ^table;
+
+	private: System::Windows::Forms::PictureBox^  player1_0;
+	private: System::Windows::Forms::PictureBox^  player1_1;
+	private: System::Windows::Forms::PictureBox^  player1_2;
+	private: System::Windows::Forms::PictureBox^  player1_3;
+	private: System::Windows::Forms::PictureBox^  player1_4;
+	private: System::Windows::Forms::PictureBox^  player1_5;
+	private: System::Windows::Forms::PictureBox^  player1_6;
+	private: System::Windows::Forms::PictureBox^  player1_7;
 		
 
 	public:
@@ -37,8 +47,6 @@ namespace Whist {
 			//
 			//TODO: Add the constructor code here
 			//
-
-
 		}
 
 	protected:
@@ -52,14 +60,7 @@ namespace Whist {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::PictureBox^  player1_0;
-	private: System::Windows::Forms::PictureBox^  player1_1;
-	private: System::Windows::Forms::PictureBox^  player1_2;	
-	private: System::Windows::Forms::PictureBox^  player1_3;
-	private: System::Windows::Forms::PictureBox^  player1_4;
-	private: System::Windows::Forms::PictureBox^  player1_5;
-	private: System::Windows::Forms::PictureBox^  player1_6;
-	private: System::Windows::Forms::PictureBox^  player1_7;
+	
 	private: System::Windows::Forms::PictureBox^  player3_0;
 	private: System::Windows::Forms::PictureBox^  player3_1;
 	private: System::Windows::Forms::PictureBox^  player3_2;
@@ -945,7 +946,7 @@ namespace Whist {
 			this->player2_name->Font = (gcnew System::Drawing::Font(L"Verdana", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->player2_name->ForeColor = System::Drawing::Color::Goldenrod;
-			this->player2_name->Location = System::Drawing::Point(12, 369);
+			this->player2_name->Location = System::Drawing::Point(12, 358);
 			this->player2_name->Name = L"player2_name";
 			this->player2_name->Size = System::Drawing::Size(91, 25);
 			this->player2_name->TabIndex = 49;
@@ -1338,7 +1339,7 @@ namespace Whist {
 			gameInfo->Text = "";
 			player1_table->Image = selectedCard->Image;
 			player1_table->Visible = true;
-			//TODO: Rearrange cards in hand.
+
 			selectedCard->Visible = false;
 			obj->Enabled = false;
 
@@ -1442,13 +1443,11 @@ namespace Whist {
 
 		//TODO: playerID_table = player->cards[0]			
 	}
-
-	/*
-	private: System::Void wait(unsigned int timeout)
+	
+	private: System::Void wait(int timeout)
 	{
 		timeout += clock();
 		while (clock() < timeout) continue;
 	}
-	 */
 };
 }
