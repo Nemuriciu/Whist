@@ -20,13 +20,19 @@ namespace Whist {
 	public:
 		static Main *main;
 		static int currentPlayer = 1;
+		int idx = 1;
 		
 	public:
 		Button^  openTable;
 		Button^  playCard;
 		PictureBox^  selectedCard;
 		Table ^table;
-		System::Windows::Forms::Label^  gameInfo;
+
+	public:
+
+
+
+			 System::Windows::Forms::Label^  gameInfo;
 
 	public:
 		GameForm(void)
@@ -1074,11 +1080,12 @@ namespace Whist {
 			this->gameInfo->BackColor = System::Drawing::Color::Transparent;
 			this->gameInfo->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->gameInfo->ForeColor = System::Drawing::Color::Red;
+			this->gameInfo->ForeColor = System::Drawing::Color::Goldenrod;
 			this->gameInfo->Location = System::Drawing::Point(300, 161);
 			this->gameInfo->Name = L"gameInfo";
 			this->gameInfo->Size = System::Drawing::Size(359, 43);
 			this->gameInfo->TabIndex = 62;
+			this->gameInfo->Text = L"Player1 must choose game.";
 			this->gameInfo->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// GameForm
@@ -1292,8 +1299,10 @@ namespace Whist {
 			selectedCard->Visible = false;
 			obj->Enabled = false;
 			main->cardsOnTable.push_back(main->players[0]->selectedCard);
-
-			gameBehavior(2);
+			main->players[0]->cards.erase(find(main->players[0]->cards.begin(), main->players[0]->cards.end(), main->players[0]->selectedCard));
+			main->players[0]->selectedCard = NULL;
+			Application::DoEvents();
+			gameBehavior();
 		}		
 	}
 
@@ -1337,17 +1346,59 @@ namespace Whist {
 	}
 
 	/* Game Behavior */
-	private: System::Void gameBehavior(int first) {
+	private: System::Void gameBehavior() {
 
-		for (size_t i = 0; i < 5; i++)
+		idx = ((idx + 1) == 7) ? 1 : idx + 1;
+
+		while(idx != currentPlayer)
 		{
-			Application::DoEvents();
+			if (idx == 1) // Player1 must move
+			{
+				playCard->Enabled = true;
+				return;
+			}
+
 			wait(1000);
-			int index = (first + i) % (main->num_pl + 1);
-			selectRandomCard(index);			
+			selectRandomCard(idx);
+			idx = ((idx + 1) == 7) ? 1 : idx + 1;
+			Application::DoEvents();
 		}
 
 		Application::DoEvents();
+		wait(500);
+
+		Player *handWinner = main->winner(main->cardsOnTable);
+		gameInfo->ForeColor = Color::Goldenrod;
+		String ^str = gcnew String(handWinner->name.c_str());
+		gameInfo->Text = str + " wins the hand!";
+		Application::DoEvents();
+		wait(4000);
+
+		player1_table->Visible = false;
+		player2_table->Visible = false;
+		player3_table->Visible = false;
+		player4_table->Visible = false;
+		player5_table->Visible = false;
+		player6_table->Visible = false;
+		main->cardsOnTable.clear();
+		gameInfo->Text = "";
+		currentPlayer = ((currentPlayer + 1) == 7) ? 1 : currentPlayer + 1;
+		idx = ((idx + 1) == 7) ? 1 : idx + 1;
+		Application::DoEvents();
+
+		if (currentPlayer == 1) // Player1 must move
+		{
+			playCard->Enabled = true;
+			return;
+		}
+
+		wait(1000);
+		selectRandomGameType(currentPlayer);
+		selectRandomCard(idx);		
+		Application::DoEvents();
+
+		wait(1000);
+		gameBehavior();
 	}
 
 	private: System::Void selectRandomGameType(int player) {
@@ -1379,12 +1430,14 @@ namespace Whist {
 				if (main->checkingCard(player, player->cards[i], main->cardsOnTable))
 				{
 					obj->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(player->cards[i]->pathImage.c_str())));
-					main->cardsOnTable.push_back(player->cards[i]);					
+					main->cardsOnTable.push_back(player->cards[i]);
+					player->cards.erase(find(player->cards.begin(), player->cards.end(), player->cards[i]));
 				}
 				else
 				{
-					obj->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(player->cards[0]->pathImage.c_str())));
-					main->cardsOnTable.push_back(player->cards[0]);
+					obj->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(player->cards[player->cards.size() - 1]->pathImage.c_str())));
+					main->cardsOnTable.push_back(player->cards[player->cards.size() - 1]);
+					player->cards.pop_back();
 				}
 
 				obj->Visible = true;
@@ -1394,8 +1447,9 @@ namespace Whist {
 			return;
 		}
 
-		obj->Image = Image::FromFile(Convert::ToString(player->cards[0]->pathImage.c_str()));
-		main->cardsOnTable.push_back(player->cards[0]);
+		obj->Image = Image::FromFile(Convert::ToString(player->cards[player->cards.size() - 1]->pathImage.c_str()));
+		main->cardsOnTable.push_back(player->cards[player->cards.size() - 1]);
+		player->cards.pop_back();
 		obj->Visible = true;		
 	}
 
