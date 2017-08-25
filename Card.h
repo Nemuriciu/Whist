@@ -3,10 +3,7 @@
 using namespace std;
 
 class Player;
-<<<<<<< HEAD
 
-=======
->>>>>>> 4961bab855d1310bcf2f8f384fef11e3d4a5ee94
 public class Card
 {
 public:

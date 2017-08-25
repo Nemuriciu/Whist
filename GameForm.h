@@ -27,28 +27,10 @@ namespace Whist {
 		Button^  playCard;
 		PictureBox^  selectedCard;
 		Table ^table;
-<<<<<<< HEAD
-=======
+
 	private: System::Windows::Forms::RichTextBox^  richTextBox1;
 	private: System::Windows::Forms::Button^  button1;
-	public:
-
-	public:
-
-	public:
->>>>>>> 4961bab855d1310bcf2f8f384fef11e3d4a5ee94
-
-	public:
-
-
-
-<<<<<<< HEAD
-=======
-
-	public:
-
->>>>>>> 4961bab855d1310bcf2f8f384fef11e3d4a5ee94
-			 System::Windows::Forms::Label^  gameInfo;
+	private: System::Windows::Forms::Label^  gameInfo;
 
 	public:
 		GameForm(void)

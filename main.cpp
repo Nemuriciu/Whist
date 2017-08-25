@@ -145,11 +145,7 @@ int Main::points(vector <Card*> cardsOnTable, Player* player)
 
 Player *Main::winner(vector <Card*> cardsOnTable)
 {
-<<<<<<< HEAD
 	Player *TheWinner = cardsOnTable[0]->player;
-=======
-	Player *TheWinner;
->>>>>>> 4961bab855d1310bcf2f8f384fef11e3d4a5ee94
 
 	for (size_t i = 0; i < cardsOnTable.size(); i++)
 		if (cardsOnTable[0]->type == cardsOnTable[i]->type
