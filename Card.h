@@ -13,6 +13,7 @@ public:
 	int val;
 	Color type;
 	string pathImage;
+	int player;
 
 	Card();
 	Card(int val, Color type);

@@ -44,6 +44,7 @@ Main::Main()
 				random_num = dist(generator) % (cards.size() - 1);
 
 			Card *card = cards[random_num];
+			card->player = i;
 			players[i]->cards.push_back(card);
 			cards.erase(cards.begin() + random_num);
 		}
@@ -140,6 +141,18 @@ int Main::points(vector <Card*> cardsOnTable, Player* player)
 
 	}
 	return Points;
+}
+
+int Main::winner(vector <Card*> cardsOnTable, int game)
+{
+	int TheWinner;
+
+	for (size_t i = 0; i < cardsOnTable.size(); i++)
+		if (cardsOnTable[0]->type == cardsOnTable[i]->type
+			&& cardsOnTable[0]->val < cardsOnTable[i]->val)
+			TheWinner = cardsOnTable[i]->player;
+
+	return 0;
 }
 
 void Main::markGame(Player *player,int game, int (&tabel)[6][8])
