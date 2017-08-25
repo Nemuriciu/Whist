@@ -32,7 +32,12 @@ namespace Whist {
 	private: System::Windows::Forms::RichTextBox^  richTextBox1;
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::Label^  gameSelected;
-
+	private: System::Windows::Forms::ListView^  listView1;
+	private: System::Windows::Forms::ColumnHeader^  playerName;
+	private: System::Windows::Forms::ColumnHeader^  playerScore;
+	private: System::Windows::Forms::ColumnHeader^  empty;
+	public: System::Windows::Forms::Button^  openScore;
+	private:
 	private: System::Windows::Forms::Label^  gameInfo;
 
 	public:
@@ -128,6 +133,30 @@ namespace Whist {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(GameForm::typeid));
+			System::Windows::Forms::ListViewItem^  listViewItem1 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(3) {
+				L"player1_row",
+					L"Player1", L"0"
+			}, -1, System::Drawing::Color::Empty, System::Drawing::Color::White, nullptr));
+			System::Windows::Forms::ListViewItem^  listViewItem2 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(3) {
+				L"player2_row",
+					L"Player2", L"0"
+			}, -1));
+			System::Windows::Forms::ListViewItem^  listViewItem3 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(3) {
+				L"player3_row",
+					L"Player3", L"0"
+			}, -1));
+			System::Windows::Forms::ListViewItem^  listViewItem4 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(3) {
+				L"player4_row",
+					L"Player4", L"0"
+			}, -1));
+			System::Windows::Forms::ListViewItem^  listViewItem5 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(3) {
+				L"player5_row",
+					L"Player5", L"0"
+			}, -1));
+			System::Windows::Forms::ListViewItem^  listViewItem6 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(3) {
+				L"player6_row",
+					L"Player6", L"0"
+			}, -1));
 			this->player1_0 = (gcnew System::Windows::Forms::PictureBox());
 			this->player1_2 = (gcnew System::Windows::Forms::PictureBox());
 			this->player1_1 = (gcnew System::Windows::Forms::PictureBox());
@@ -194,6 +223,11 @@ namespace Whist {
 			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->gameSelected = (gcnew System::Windows::Forms::Label());
+			this->listView1 = (gcnew System::Windows::Forms::ListView());
+			this->empty = (gcnew System::Windows::Forms::ColumnHeader());
+			this->playerName = (gcnew System::Windows::Forms::ColumnHeader());
+			this->playerScore = (gcnew System::Windows::Forms::ColumnHeader());
+			this->openScore = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player1_0))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player1_2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player1_1))->BeginInit();
@@ -1126,6 +1160,71 @@ namespace Whist {
 			this->gameSelected->TabIndex = 65;
 			this->gameSelected->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
+			// listView1
+			// 
+			this->listView1->AutoArrange = false;
+			this->listView1->BackColor = System::Drawing::Color::White;
+			this->listView1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->listView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(3) {
+				this->empty, this->playerName,
+					this->playerScore
+			});
+			this->listView1->Font = (gcnew System::Drawing::Font(L"Eras Light ITC", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->listView1->HeaderStyle = System::Windows::Forms::ColumnHeaderStyle::Nonclickable;
+			this->listView1->HideSelection = false;
+			listViewItem1->StateImageIndex = 0;
+			this->listView1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ListViewItem^  >(6) {
+				listViewItem1, listViewItem2,
+					listViewItem3, listViewItem4, listViewItem5, listViewItem6
+			});
+			this->listView1->LabelWrap = false;
+			this->listView1->Location = System::Drawing::Point(303, 217);
+			this->listView1->MultiSelect = false;
+			this->listView1->Name = L"listView1";
+			this->listView1->Scrollable = false;
+			this->listView1->Size = System::Drawing::Size(360, 258);
+			this->listView1->TabIndex = 67;
+			this->listView1->TileSize = System::Drawing::Size(100, 100);
+			this->listView1->UseCompatibleStateImageBehavior = false;
+			this->listView1->View = System::Windows::Forms::View::Details;
+			this->listView1->Visible = false;
+			// 
+			// empty
+			// 
+			this->empty->Tag = L"";
+			this->empty->Width = 0;
+			// 
+			// playerName
+			// 
+			this->playerName->Text = L"Name";
+			this->playerName->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->playerName->Width = 180;
+			// 
+			// playerScore
+			// 
+			this->playerScore->Text = L"Score";
+			this->playerScore->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->playerScore->Width = 180;
+			// 
+			// openScore
+			// 
+			this->openScore->AutoSize = true;
+			this->openScore->BackColor = System::Drawing::Color::Cornsilk;
+			this->openScore->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->openScore->FlatAppearance->BorderSize = 0;
+			this->openScore->Font = (gcnew System::Drawing::Font(L"Verdana", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->openScore->ForeColor = System::Drawing::Color::Black;
+			this->openScore->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"openScore.Image")));
+			this->openScore->Location = System::Drawing::Point(143, 588);
+			this->openScore->Name = L"openScore";
+			this->openScore->Size = System::Drawing::Size(104, 60);
+			this->openScore->TabIndex = 68;
+			this->openScore->Text = L"Score";
+			this->openScore->UseVisualStyleBackColor = false;
+			this->openScore->Click += gcnew System::EventHandler(this, &GameForm::openScoreTable);
+			// 
 			// GameForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1133,6 +1232,8 @@ namespace Whist {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1008, 662);
+			this->Controls->Add(this->openScore);
+			this->Controls->Add(this->listView1);
 			this->Controls->Add(this->gameSelected);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->richTextBox1);
@@ -1376,6 +1477,9 @@ namespace Whist {
 		gameInfo->ForeColor = Color::Goldenrod;
 		String ^str = gcnew String(handWinner->name.c_str());
 		gameInfo->Text = str + " wins the hand!";
+
+		int pts = main->points(main->cardsOnTable);
+		setPoints(handWinner, pts);
 		Application::DoEvents();
 		wait(4000);
 
@@ -1559,11 +1663,30 @@ namespace Whist {
 		return str;
 	}
 
+	private: System::Void setPoints(Player *player, int score)
+	{
+		ListViewItem ^obj = listView1->Items[player->numberOfPlayer];
+
+		int currentScore = Convert::ToInt32(obj->SubItems[2]->Text);
+		currentScore += score;
+		obj->SubItems[2]->Text = Convert::ToString(currentScore);
+		
+	}
+
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) 
 	{
 		if (richTextBox1->Visible == true)
 			richTextBox1->Visible = false;
 		else richTextBox1->Visible = true;	
+	}
+	
+	private: System::Void openScoreTable(System::Object^  sender, System::EventArgs^  e) {
+		listView1->Visible = (listView1->Visible) ? false : true;
+	}
+
+	private: System::Void disableResize(System::Object^  sender, System::Windows::Forms::ColumnWidthChangingEventArgs^  e) {
+		e->Cancel = true;
+		e->NewWidth = 180;
 	}
 };
 }

@@ -18,7 +18,7 @@ public:
 
 	vector <Card*> createVector(int val);
 	int checkingCard(Player* player, Card* card, vector <Card*> cardsOnTable);
-	int points(vector <Card*> cardsOnTable, Player* player);
+	int points(vector <Card*> cardsOnTable);
 	void markGame(Player *player, int game, int (&tabel)[6][8]);
 	int checkingTabel(Player *player, int game, int(&tabel)[6][8]); 
 	Player *winner(vector <Card*> cardsOnTable);

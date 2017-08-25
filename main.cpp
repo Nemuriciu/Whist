@@ -94,11 +94,11 @@ int Main::checkingCard(Player* player, Card* card, vector <Card*> cardsOnTable)
 	return 1;
 }
 
-int Main::points(vector <Card*> cardsOnTable, Player* player)
+int Main::points(vector <Card*> cardsOnTable)
 {
 	signed Points = 0;
 
-	switch (player->game)
+	switch (Table::currentGame)
 	{
 		// Totals
 	case (6):
@@ -108,7 +108,7 @@ int Main::points(vector <Card*> cardsOnTable, Player* player)
 		for (size_t i = 0; i < cardsOnTable.size(); i++)
 			if (cardsOnTable[i]->type == 2 && cardsOnTable[i]->val == 13)
 				Points = Points - 80;
-		if (player->game == 0)
+		if (Table::currentGame == 0)
 			break;
 
 		// Ten of clubs
@@ -116,7 +116,7 @@ int Main::points(vector <Card*> cardsOnTable, Player* player)
 		for (size_t i = 0; i < cardsOnTable.size(); i++)
 			if (cardsOnTable[i]->type == 0 && cardsOnTable[i]->val == 10)
 				Points = Points + 80;
-		if (player->game == 1)
+		if (Table::currentGame == 1)
 			break;
 
 		// Queens
@@ -124,7 +124,7 @@ int Main::points(vector <Card*> cardsOnTable, Player* player)
 		for (size_t i = 0; i < cardsOnTable.size(); i++)
 			if (cardsOnTable[i]->val == 12)
 				Points = Points - 20;
-		if (player->game == 2)
+		if (Table::currentGame == 2)
 			break;
 
 		// Diamonds
@@ -132,7 +132,7 @@ int Main::points(vector <Card*> cardsOnTable, Player* player)
 		for (size_t i = 0; i < cardsOnTable.size(); i++)
 			if (cardsOnTable[i]->type == 1)
 				Points = Points - 10;
-		if (player->game == 3)
+		if (Table::currentGame == 3)
 			break;
 
 		// Whist
