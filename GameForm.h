@@ -27,11 +27,27 @@ namespace Whist {
 		Button^  playCard;
 		PictureBox^  selectedCard;
 		Table ^table;
+<<<<<<< HEAD
+=======
+	private: System::Windows::Forms::RichTextBox^  richTextBox1;
+	private: System::Windows::Forms::Button^  button1;
+	public:
+
+	public:
+
+	public:
+>>>>>>> 4961bab855d1310bcf2f8f384fef11e3d4a5ee94
 
 	public:
 
 
 
+<<<<<<< HEAD
+=======
+
+	public:
+
+>>>>>>> 4961bab855d1310bcf2f8f384fef11e3d4a5ee94
 			 System::Windows::Forms::Label^  gameInfo;
 
 	public:
@@ -122,8 +138,9 @@ namespace Whist {
 	private: System::Windows::Forms::PictureBox^  player4_table;
 	private: System::Windows::Forms::PictureBox^  player5_table;
 	private: System::Windows::Forms::PictureBox^  player6_table;
+	private: System::ComponentModel::IContainer^  components;
 
-	private: System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		void InitializeComponent(void)
@@ -192,6 +209,8 @@ namespace Whist {
 			this->playCard = (gcnew System::Windows::Forms::Button());
 			this->openTable = (gcnew System::Windows::Forms::Button());
 			this->gameInfo = (gcnew System::Windows::Forms::Label());
+			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player1_0))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player1_2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player1_1))->BeginInit();
@@ -1088,6 +1107,30 @@ namespace Whist {
 			this->gameInfo->Text = L"Player1 must choose game.";
 			this->gameInfo->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
+			// richTextBox1
+			// 
+			this->richTextBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->richTextBox1->EnableAutoDragDrop = true;
+			this->richTextBox1->Location = System::Drawing::Point(82, 12);
+			this->richTextBox1->Name = L"richTextBox1";
+			this->richTextBox1->ReadOnly = true;
+			this->richTextBox1->Size = System::Drawing::Size(201, 166);
+			this->richTextBox1->TabIndex = 63;
+			this->richTextBox1->Text = resources->GetString(L"richTextBox1.Text");
+			this->richTextBox1->Visible = false;
+			// 
+			// button1
+			// 
+			this->button1->AccessibleRole = System::Windows::Forms::AccessibleRole::Text;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->button1->Location = System::Drawing::Point(11, 12);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(65, 38);
+			this->button1->TabIndex = 64;
+			this->button1->Text = L"Rules";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &GameForm::button1_Click);
+			// 
 			// GameForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1095,6 +1138,8 @@ namespace Whist {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1008, 662);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->richTextBox1);
 			this->Controls->Add(this->openTable);
 			this->Controls->Add(this->playCard);
 			this->Controls->Add(this->player3_table);
@@ -1470,5 +1515,17 @@ namespace Whist {
 		timeout += clock();
 		while (clock() < timeout) continue;
 	}
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) 
+{
+	if (richTextBox1->Visible == true)
+	{
+		richTextBox1->Visible = false;
+	}
+	else
+	{
+		richTextBox1->Visible = true;
+	}
+	
+}
 };
 }
