@@ -31,6 +31,8 @@ namespace Whist {
 
 	private: System::Windows::Forms::RichTextBox^  richTextBox1;
 	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::Label^  gameSelected;
+
 	private: System::Windows::Forms::Label^  gameInfo;
 
 	public:
@@ -43,9 +45,6 @@ namespace Whist {
 		}
 
 	protected:
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
 		~GameForm()
 		{
 			if (components)
@@ -194,6 +193,7 @@ namespace Whist {
 			this->gameInfo = (gcnew System::Windows::Forms::Label());
 			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->gameSelected = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player1_0))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player1_2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player1_1))->BeginInit();
@@ -1094,7 +1094,7 @@ namespace Whist {
 			// 
 			this->richTextBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->richTextBox1->EnableAutoDragDrop = true;
-			this->richTextBox1->Location = System::Drawing::Point(82, 12);
+			this->richTextBox1->Location = System::Drawing::Point(98, 12);
 			this->richTextBox1->Name = L"richTextBox1";
 			this->richTextBox1->ReadOnly = true;
 			this->richTextBox1->Size = System::Drawing::Size(201, 166);
@@ -1114,6 +1114,18 @@ namespace Whist {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &GameForm::button1_Click);
 			// 
+			// gameSelected
+			// 
+			this->gameSelected->BackColor = System::Drawing::Color::Transparent;
+			this->gameSelected->Font = (gcnew System::Drawing::Font(L"Verdana", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->gameSelected->ForeColor = System::Drawing::Color::White;
+			this->gameSelected->Location = System::Drawing::Point(810, 12);
+			this->gameSelected->Name = L"gameSelected";
+			this->gameSelected->Size = System::Drawing::Size(186, 43);
+			this->gameSelected->TabIndex = 65;
+			this->gameSelected->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
 			// GameForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1121,6 +1133,7 @@ namespace Whist {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1008, 662);
+			this->Controls->Add(this->gameSelected);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->richTextBox1);
 			this->Controls->Add(this->openTable);
@@ -1334,6 +1347,7 @@ namespace Whist {
 		gameInfo->ForeColor = Color::Goldenrod;
 
 		gameInfo->Text = gameToString() + " selected. Play a Card";
+		gameSelected->Text = gameToString();
 	}
 
 	private: System::Void gameBehavior() {
@@ -1400,6 +1414,7 @@ namespace Whist {
 			selectRandomGameType(currentPlayer);
 			selectRandomCard(currentPlayer);
 			gameBehavior();
+			return;
 		}
 		
 		if (currentPlayer == 1) // Player1 must move
@@ -1435,9 +1450,11 @@ namespace Whist {
 
 		gameInfo->ForeColor = Color::Goldenrod;
 		gameInfo->Text = "Player" + Convert::ToString(player) + " selected game - " + gameToString();
+		gameSelected->Text = gameToString();
 		Application::DoEvents();
 		wait(2000);
 		gameInfo->Text = "";
+
 	}
 
 	private: System::Void selectRandomCard(int playerId) {
@@ -1477,13 +1494,21 @@ namespace Whist {
 		player1_7->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[7]->pathImage.c_str())));
 
 		player1_0->Visible = true;
+		player1_0->Location = Point(player1_0->Location.X, 550);
 		player1_1->Visible = true;
+		player1_1->Location = Point(player1_1->Location.X, 550);
 		player1_2->Visible = true;
+		player1_2->Location = Point(player1_2->Location.X, 550);
 		player1_3->Visible = true;
+		player1_3->Location = Point(player1_3->Location.X, 550);
 		player1_4->Visible = true;
+		player1_4->Location = Point(player1_4->Location.X, 550);
 		player1_5->Visible = true;
+		player1_5->Location = Point(player1_5->Location.X, 550);
 		player1_6->Visible = true;
+		player1_6->Location = Point(player1_6->Location.X, 550);
 		player1_7->Visible = true;
+		player1_7->Location = Point(player1_7->Location.X, 550);
 	}
 	
 	private: System::Void wait(int timeout)
@@ -1509,7 +1534,7 @@ namespace Whist {
 			str = "Ten of Clubs";
 			break;
 		case Player::Queens:
-			str = "Queend";
+			str = "Queens";
 			break;
 		case Player::Diamonds:
 			str = "Diamonds";
@@ -1525,6 +1550,9 @@ namespace Whist {
 			break;
 		case Player::Acool:
 			str = "Acool";
+			break;
+		default:
+			str = "Unknown";
 			break;
 		}
 
