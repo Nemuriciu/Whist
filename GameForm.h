@@ -18,35 +18,23 @@ namespace Whist {
 	public ref class GameForm : public System::Windows::Forms::Form
 	{
 	public:
-		static Main *main = new Main();
-		static Player::Games currentGame;
+		static Main *main;
 		static int currentPlayer = 1;
+		
+	public:
+		Button^  openTable;
 		Button^  playCard;
 		PictureBox^  selectedCard;
-	public: System::Windows::Forms::Button^  openTable;
-
-		System::Windows::Forms::Label^  gameInfo;
-	public:
 		Table ^table;
-
-	private: System::Windows::Forms::PictureBox^  player1_0;
-	private: System::Windows::Forms::PictureBox^  player1_1;
-	private: System::Windows::Forms::PictureBox^  player1_2;
-	private: System::Windows::Forms::PictureBox^  player1_3;
-	private: System::Windows::Forms::PictureBox^  player1_4;
-	private: System::Windows::Forms::PictureBox^  player1_5;
-	private: System::Windows::Forms::PictureBox^  player1_6;
-	private: System::Windows::Forms::PictureBox^  player1_7;
-		
+		System::Windows::Forms::Label^  gameInfo;
 
 	public:
 		GameForm(void)
 		{
-			InitializeComponent();
+			main = new Main();
 			table = gcnew Table();
-			//
-			//TODO: Add the constructor code here
-			//
+			InitializeComponent();
+			setCardsImages();
 		}
 
 	protected:
@@ -60,22 +48,43 @@ namespace Whist {
 				delete components;
 			}
 		}
+
+	private: System::Windows::Forms::PictureBox^  player1_0;
+	private: System::Windows::Forms::PictureBox^  player1_1;
+	private: System::Windows::Forms::PictureBox^  player1_2;
+	private: System::Windows::Forms::PictureBox^  player1_3;
+	private: System::Windows::Forms::PictureBox^  player1_4;
+	private: System::Windows::Forms::PictureBox^  player1_5;
+	private: System::Windows::Forms::PictureBox^  player1_6;
+	private: System::Windows::Forms::PictureBox^  player1_7;
+
+	private: System::Windows::Forms::PictureBox^  player2_7;
+	private: System::Windows::Forms::PictureBox^  player2_6;
+	private: System::Windows::Forms::PictureBox^  player2_5;
+	private: System::Windows::Forms::PictureBox^  player2_4;
+	private: System::Windows::Forms::PictureBox^  player2_3;
+	private: System::Windows::Forms::PictureBox^  player2_2;
+	private: System::Windows::Forms::PictureBox^  player2_1;
+	private: System::Windows::Forms::PictureBox^  player2_0;
 	
 	private: System::Windows::Forms::PictureBox^  player3_0;
 	private: System::Windows::Forms::PictureBox^  player3_1;
 	private: System::Windows::Forms::PictureBox^  player3_2;
-
-
-
 	private: System::Windows::Forms::PictureBox^  player3_3;
 	private: System::Windows::Forms::PictureBox^  player3_4;
-
-
 	private: System::Windows::Forms::PictureBox^  player3_5;
-
 	private: System::Windows::Forms::PictureBox^  player3_6;
-
 	private: System::Windows::Forms::PictureBox^  player3_7;
+
+	private: System::Windows::Forms::PictureBox^  player4_7;
+	private: System::Windows::Forms::PictureBox^  player4_6;
+	private: System::Windows::Forms::PictureBox^  player4_5;
+	private: System::Windows::Forms::PictureBox^  player4_4;
+	private: System::Windows::Forms::PictureBox^  player4_3;
+	private: System::Windows::Forms::PictureBox^  player4_2;
+	private: System::Windows::Forms::PictureBox^  player4_1;
+	private: System::Windows::Forms::PictureBox^  player4_0;
+
 	private: System::Windows::Forms::PictureBox^  player5_7;
 	private: System::Windows::Forms::PictureBox^  player5_6;
 	private: System::Windows::Forms::PictureBox^  player5_5;
@@ -85,29 +94,6 @@ namespace Whist {
 	private: System::Windows::Forms::PictureBox^  player5_1;
 	private: System::Windows::Forms::PictureBox^  player5_0;
 
-
-
-
-
-
-
-
-
-	private: System::Windows::Forms::PictureBox^  player4_7;
-	private: System::Windows::Forms::PictureBox^  player4_6;
-	private: System::Windows::Forms::PictureBox^  player4_5;
-	private: System::Windows::Forms::PictureBox^  player4_4;
-	private: System::Windows::Forms::PictureBox^  player4_3;
-
-
-
-
-
-	private: System::Windows::Forms::PictureBox^  player4_2;
-
-	private: System::Windows::Forms::PictureBox^  player4_1;
-
-	private: System::Windows::Forms::PictureBox^  player4_0;
 	private: System::Windows::Forms::PictureBox^  player6_7;
 	private: System::Windows::Forms::PictureBox^  player6_6;
 	private: System::Windows::Forms::PictureBox^  player6_5;
@@ -115,60 +101,25 @@ namespace Whist {
 	private: System::Windows::Forms::PictureBox^  player6_3;
 	private: System::Windows::Forms::PictureBox^  player6_2;
 	private: System::Windows::Forms::PictureBox^  player6_1;
-	private: System::Windows::Forms::PictureBox^  player6_0;
+	private: System::Windows::Forms::PictureBox^  player6_0;	
 
-
-
-
-
-
-
-
-
-	private: System::Windows::Forms::PictureBox^  player2_7;
-
-	private: System::Windows::Forms::PictureBox^  player2_6;
-
-	private: System::Windows::Forms::PictureBox^  player2_5;
-
-	private: System::Windows::Forms::PictureBox^  player2_4;
-
-	private: System::Windows::Forms::PictureBox^  player2_3;
-
-	private: System::Windows::Forms::PictureBox^  player2_2;
-
-	private: System::Windows::Forms::PictureBox^  player2_1;
-
-	private: System::Windows::Forms::PictureBox^  player2_0;
 	private: System::Windows::Forms::Label^  player1_name;
 	private: System::Windows::Forms::Label^  player2_name;
 	private: System::Windows::Forms::Label^  player3_name;
 	private: System::Windows::Forms::Label^  player4_name;
 	private: System::Windows::Forms::Label^  player5_name;
 	private: System::Windows::Forms::Label^  player6_name;
+
 	private: System::Windows::Forms::PictureBox^  player1_table;
-
 	private: System::Windows::Forms::PictureBox^  player2_table;
-	private: System::Windows::Forms::PictureBox^  player6_table;
-	private: System::Windows::Forms::PictureBox^  player4_table;
-
-
-
-	private: System::Windows::Forms::PictureBox^  player5_table;
 	private: System::Windows::Forms::PictureBox^  player3_table;
+	private: System::Windows::Forms::PictureBox^  player4_table;
+	private: System::Windows::Forms::PictureBox^  player5_table;
+	private: System::Windows::Forms::PictureBox^  player6_table;
 
-
-	private:
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		System::ComponentModel::Container ^components;
+	private: System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(GameForm::typeid));
@@ -293,10 +244,8 @@ namespace Whist {
 			// 
 			// player1_0
 			// 
-			this->player1_0->BackColor = System::Drawing::SystemColors::Control;
-			this->player1_0->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->player1_0->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player1_0->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player1_0->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_0.Image")));
 			this->player1_0->Location = System::Drawing::Point(304, 550);
 			this->player1_0->Name = L"player1_0";
 			this->player1_0->Size = System::Drawing::Size(75, 100);
@@ -310,7 +259,6 @@ namespace Whist {
 			this->player1_2->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player1_2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player1_2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player1_2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_2.Image")));
 			this->player1_2->Location = System::Drawing::Point(384, 550);
 			this->player1_2->Name = L"player1_2";
 			this->player1_2->Size = System::Drawing::Size(75, 100);
@@ -324,7 +272,6 @@ namespace Whist {
 			this->player1_1->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player1_1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player1_1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player1_1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_1.Image")));
 			this->player1_1->Location = System::Drawing::Point(344, 550);
 			this->player1_1->Name = L"player1_1";
 			this->player1_1->Size = System::Drawing::Size(75, 100);
@@ -338,7 +285,6 @@ namespace Whist {
 			this->player1_3->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player1_3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player1_3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player1_3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_3.Image")));
 			this->player1_3->Location = System::Drawing::Point(424, 550);
 			this->player1_3->Name = L"player1_3";
 			this->player1_3->Size = System::Drawing::Size(75, 100);
@@ -352,7 +298,6 @@ namespace Whist {
 			this->player1_4->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player1_4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player1_4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player1_4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_4.Image")));
 			this->player1_4->Location = System::Drawing::Point(464, 550);
 			this->player1_4->Name = L"player1_4";
 			this->player1_4->Size = System::Drawing::Size(75, 100);
@@ -366,7 +311,6 @@ namespace Whist {
 			this->player1_5->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player1_5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player1_5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player1_5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_5.Image")));
 			this->player1_5->Location = System::Drawing::Point(504, 550);
 			this->player1_5->Name = L"player1_5";
 			this->player1_5->Size = System::Drawing::Size(75, 100);
@@ -380,7 +324,6 @@ namespace Whist {
 			this->player1_6->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player1_6->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player1_6->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player1_6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_6.Image")));
 			this->player1_6->Location = System::Drawing::Point(544, 550);
 			this->player1_6->Name = L"player1_6";
 			this->player1_6->Size = System::Drawing::Size(75, 100);
@@ -394,7 +337,6 @@ namespace Whist {
 			this->player1_7->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->player1_7->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->player1_7->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->player1_7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"player1_7.Image")));
 			this->player1_7->Location = System::Drawing::Point(584, 550);
 			this->player1_7->Name = L"player1_7";
 			this->player1_7->Size = System::Drawing::Size(75, 100);
@@ -1325,7 +1267,14 @@ namespace Whist {
 	private: System::Void choose_Card(System::Object^  sender, System::EventArgs^  e) {
 		Button ^obj = safe_cast<Button^>(sender);
 
-		if (selectedCard != nullptr && currentGame != (Player::Games)99)
+		if (Table::currentGame == (Player::Games)99)
+		{
+			gameInfo->ForeColor = Color::Red;
+			gameInfo->Text = "No game type selected.";
+			return;
+		}
+
+		if (selectedCard != nullptr)
 		{
 			if (main->cardsOnTable.size() > 0) {
 				if (!main->checkingCard(main->players[0], main->players[0]->selectedCard, main->cardsOnTable))
@@ -1342,8 +1291,9 @@ namespace Whist {
 
 			selectedCard->Visible = false;
 			obj->Enabled = false;
+			main->cardsOnTable.push_back(main->players[0]->selectedCard);
 
-			// gameBehavior();
+			gameBehavior(2);
 		}		
 	}
 
@@ -1351,12 +1301,11 @@ namespace Whist {
 
 		table->ShowDialog();
 		openTable->Enabled = false;
-		currentGame = Table::currentGame;
 		gameInfo->ForeColor = Color::Goldenrod;
 		
 		String ^str;
 
-		switch (currentGame)
+		switch (Table::currentGame)
 		{
 		case Player::King_of_Hearts:
 			str = "King of Hearts";
@@ -1388,25 +1337,17 @@ namespace Whist {
 	}
 
 	/* Game Behavior */
-	private: System::Void gameBehavior() {
+	private: System::Void gameBehavior(int first) {
 
-		if (currentPlayer == 1)
+		for (size_t i = 0; i < 5; i++)
 		{
-
+			Application::DoEvents();
+			wait(1000);
+			int index = (first + i) % (main->num_pl + 1);
+			selectRandomCard(index);			
 		}
-		else
-		{
-			selectRandomGameType(currentPlayer);
-		}
 
-		for (size_t i = 0; i < main->num_pl; i++)
-		{
-			if ((currentPlayer + i) % currentPlayer == 1)
-			{
-
-			}
-			else selectRandomCard((currentPlayer + i) % currentPlayer);
-		}
+		Application::DoEvents();
 	}
 
 	private: System::Void selectRandomGameType(int player) {
@@ -1429,19 +1370,45 @@ namespace Whist {
 
 	private: System::Void selectRandomCard(int playerId) {
 		Player *player = main->players[playerId - 1];
+		String ^str = "player" + Convert::ToString(playerId) + "_table";
+		PictureBox ^obj = safe_cast<PictureBox^>(this->Controls->Find(str, true)[0]);
 
 		if (main->cardsOnTable.size() > 0) {
 			for (size_t i = 0; i < player->cards.size(); i++)
+			{
 				if (main->checkingCard(player, player->cards[i], main->cardsOnTable))
 				{
-					//TODO: playerID_table = player->cards[i]
-					break;
+					obj->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(player->cards[i]->pathImage.c_str())));
+					main->cardsOnTable.push_back(player->cards[i]);					
 				}
+				else
+				{
+					obj->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(player->cards[0]->pathImage.c_str())));
+					main->cardsOnTable.push_back(player->cards[0]);
+				}
+
+				obj->Visible = true;
+				break;
+			}
 
 			return;
 		}
 
-		//TODO: playerID_table = player->cards[0]			
+		obj->Image = Image::FromFile(Convert::ToString(player->cards[0]->pathImage.c_str()));
+		main->cardsOnTable.push_back(player->cards[0]);
+		obj->Visible = true;		
+	}
+
+	private: System::Void setCardsImages()
+	{
+		player1_0->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[0]->pathImage.c_str())));
+		player1_1->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[1]->pathImage.c_str())));
+		player1_2->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[2]->pathImage.c_str())));
+		player1_3->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[3]->pathImage.c_str())));
+		player1_4->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[4]->pathImage.c_str())));
+		player1_5->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[5]->pathImage.c_str())));
+		player1_6->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[6]->pathImage.c_str())));
+		player1_7->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[7]->pathImage.c_str())));
 	}
 	
 	private: System::Void wait(int timeout)

@@ -18,20 +18,20 @@ Card::Card(int val, Color type)
 	switch (type)
 	{
 	case(Color:: Club):
-		typeString = "Clubs";
+		typeString = "clubs";
 		break;
 	case (Color::Diamond):
-		typeString = "Diamonds";
+		typeString = "diamonds";
 		break;
 	case(Color::Spade):
-		typeString = "Spades";
+		typeString = "spades";
 		break;
 	case(Color::Heart):
-		typeString = "Hearts";
+		typeString = "hearts";
 		break;
 	}
 
-	this->pathImage = "Images/Cards/" + valString + "_of_" + typeString + ".png";
+	this->pathImage = "Images\\Cards\\" + valString + "_of_" + typeString + ".png";
 }
 
 Card::~Card()
