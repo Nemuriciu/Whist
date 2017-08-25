@@ -19,6 +19,7 @@ namespace Whist {
 	{
 	public:
 		static Main *main;
+		static int startingPlayer = 1;
 		static int currentPlayer = 1;
 		int idx = 1;
 		
@@ -1269,32 +1270,24 @@ namespace Whist {
 			selectedCard = obj;
 		}
 
-		switch (selectedCard->Location.X)
+		int index = 0;
+
+		for (size_t i = 0; i < main->players[0]->cards.size(); i++)
 		{
-		case 304:
-			main->players[0]->selectedCard = main->players[0]->cards[0];
-			break;
-		case 344:
-			main->players[0]->selectedCard = main->players[0]->cards[1];
-			break;
-		case 384:
-			main->players[0]->selectedCard = main->players[0]->cards[2];
-			break;
-		case 424:
-			main->players[0]->selectedCard = main->players[0]->cards[3];
-			break;
-		case 464:
-			main->players[0]->selectedCard = main->players[0]->cards[4];
-			break;
-		case 504:
-			main->players[0]->selectedCard = main->players[0]->cards[5];
-			break;
-		case 544:
-			main->players[0]->selectedCard = main->players[0]->cards[6];
-			break;
-		case 584:
-			main->players[0]->selectedCard = main->players[0]->cards[7];
-			break;
+			PictureBox ^box = safe_cast<PictureBox^>(this->Controls->Find("player1_" + Convert::ToString(index), true)[0]);
+			index++;
+
+			if (!box->Visible)
+			{
+				i--;
+				continue;
+			}
+
+			if (obj == box)
+			{
+				main->players[0]->selectedCard = main->players[0]->cards[i];
+				break;
+			}
 		}
 	}
 
@@ -1328,6 +1321,7 @@ namespace Whist {
 			main->cardsOnTable.push_back(main->players[0]->selectedCard);
 			main->players[0]->cards.erase(find(main->players[0]->cards.begin(), main->players[0]->cards.end(), main->players[0]->selectedCard));
 			main->players[0]->selectedCard = NULL;
+			selectedCard = nullptr;
 			Application::DoEvents();
 			gameBehavior();
 		}		
@@ -1338,7 +1332,172 @@ namespace Whist {
 		table->ShowDialog();
 		openTable->Enabled = false;
 		gameInfo->ForeColor = Color::Goldenrod;
+
+		gameInfo->Text = gameToString() + " selected. Play a Card";
+	}
+
+	private: System::Void gameBehavior() {
+
+		idx = ((idx + 1) == 7) ? 1 : idx + 1;
+
+		while(idx != currentPlayer)
+		{
+			if (idx == 1) // Player1 must move
+			{
+				playCard->Enabled = true;
+				return;
+			}
+
+			Application::DoEvents();
+			wait(1000);
+			selectRandomCard(idx);
+			idx = ((idx + 1) == 7) ? 1 : idx + 1;
+			Application::DoEvents();
+		}
+
+		Application::DoEvents();
+		wait(500);
+
+		Player *handWinner = main->winner(main->cardsOnTable);
+		gameInfo->ForeColor = Color::Goldenrod;
+		String ^str = gcnew String(handWinner->name.c_str());
+		gameInfo->Text = str + " wins the hand!";
+		Application::DoEvents();
+		wait(4000);
+
+		player1_table->Visible = false;
+		player2_table->Visible = false;
+		player3_table->Visible = false;
+		player4_table->Visible = false;
+		player5_table->Visible = false;
+		player6_table->Visible = false;
+		main->cardsOnTable.clear();
+		gameInfo->Text = "";
+
+		currentPlayer = handWinner->numberOfPlayer + 1;
+		idx = currentPlayer;
+
+		// Round finished. Next player to choose game
+		if (!main->players[0]->cards.size())
+		{
+			main->cards = main->createVector(main->num_pl);
+			main->giveCards();
+			setCardsImages();
+			startingPlayer = ((startingPlayer + 1) == 7) ? 1 : startingPlayer + 1;
+			currentPlayer = startingPlayer;
+			idx = currentPlayer;
+
+			if (startingPlayer == 1) // Player1 must choose game type
+			{
+				openTable->Enabled = true;
+				gameInfo->ForeColor = Color::Goldenrod;
+				gameInfo->Text = "Your turn. Choose a game type.";
+				return;
+			}
+
+			Application::DoEvents();
+			wait(1000);
+			selectRandomGameType(currentPlayer);
+			selectRandomCard(currentPlayer);
+			gameBehavior();
+		}
 		
+		if (currentPlayer == 1) // Player1 must move
+		{			
+			playCard->Enabled = true;
+			gameInfo->Text = "Play a card";
+			gameInfo->ForeColor = Color::Goldenrod;
+			return;
+		}
+
+		Application::DoEvents();
+		wait(750);
+		selectRandomCard(idx);
+		gameBehavior();
+	}
+
+	private: System::Void selectRandomGameType(int player) {
+		for (size_t i = 0; i < 8; i++)
+		{
+			if (!main->checkingTabel(main->players[player - 1], i, main->tabel))
+			{
+				main->markGame(main->players[player - 1], i, main->tabel);
+				
+				String ^str = System::Convert::ToString((player - 1) * 8 + i);
+				str = "button" + str;
+				Button ^btn = safe_cast<Button^>(table->Controls->Find(str, true)[0]);
+				btn->BackColor = Color::Red;
+				btn->Enabled = false;
+
+				break;
+			}				
+		}
+
+		gameInfo->ForeColor = Color::Goldenrod;
+		gameInfo->Text = "Player" + Convert::ToString(player) + " selected game - " + gameToString();
+		Application::DoEvents();
+		wait(2000);
+		gameInfo->Text = "";
+	}
+
+	private: System::Void selectRandomCard(int playerId) {
+		Player *player = main->players[playerId - 1];
+		String ^str = "player" + Convert::ToString(playerId) + "_table";
+		PictureBox ^obj = safe_cast<PictureBox^>(this->Controls->Find(str, true)[0]);
+
+		if (main->cardsOnTable.size() > 0) {
+			for (size_t i = 0; i < player->cards.size(); i++)
+			{
+				if (main->checkingCard(player, player->cards[i], main->cardsOnTable))
+				{
+					obj->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(player->cards[i]->pathImage.c_str())));
+					main->cardsOnTable.push_back(player->cards[i]);
+					player->cards.erase(find(player->cards.begin(), player->cards.end(), player->cards[i]));
+					obj->Visible = true;
+					return;
+				}				
+			}
+		}
+
+		obj->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(player->cards.back()->pathImage.c_str())));
+		main->cardsOnTable.push_back(player->cards.back());
+		player->cards.pop_back();
+		obj->Visible = true;		
+	}
+
+	private: System::Void setCardsImages()
+	{
+		player1_0->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[0]->pathImage.c_str())));
+		player1_1->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[1]->pathImage.c_str())));
+		player1_2->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[2]->pathImage.c_str())));
+		player1_3->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[3]->pathImage.c_str())));
+		player1_4->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[4]->pathImage.c_str())));
+		player1_5->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[5]->pathImage.c_str())));
+		player1_6->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[6]->pathImage.c_str())));
+		player1_7->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[7]->pathImage.c_str())));
+
+		player1_0->Visible = true;
+		player1_1->Visible = true;
+		player1_2->Visible = true;
+		player1_3->Visible = true;
+		player1_4->Visible = true;
+		player1_5->Visible = true;
+		player1_6->Visible = true;
+		player1_7->Visible = true;
+	}
+	
+	private: System::Void wait(int timeout)
+	{
+		timeout += clock();
+		while (clock() < timeout)
+		{
+			Threading::Thread::Sleep(1);
+			continue;
+		}
+	}
+	
+	private: System::String ^gameToString()
+	{
 		String ^str;
 
 		switch (Table::currentGame)
@@ -1369,145 +1528,14 @@ namespace Whist {
 			break;
 		}
 
-		gameInfo->Text = str + " selected. Play a Card";
+		return str;
 	}
 
-	/* Game Behavior */
-	private: System::Void gameBehavior() {
-
-		idx = ((idx + 1) == 7) ? 1 : idx + 1;
-
-		while(idx != currentPlayer)
-		{
-			if (idx == 1) // Player1 must move
-			{
-				playCard->Enabled = true;
-				return;
-			}
-
-			wait(1000);
-			selectRandomCard(idx);
-			idx = ((idx + 1) == 7) ? 1 : idx + 1;
-			Application::DoEvents();
-		}
-
-		Application::DoEvents();
-		wait(500);
-
-		Player *handWinner = main->winner(main->cardsOnTable);
-		gameInfo->ForeColor = Color::Goldenrod;
-		String ^str = gcnew String(handWinner->name.c_str());
-		gameInfo->Text = str + " wins the hand!";
-		Application::DoEvents();
-		wait(4000);
-
-		player1_table->Visible = false;
-		player2_table->Visible = false;
-		player3_table->Visible = false;
-		player4_table->Visible = false;
-		player5_table->Visible = false;
-		player6_table->Visible = false;
-		main->cardsOnTable.clear();
-		gameInfo->Text = "";
-		currentPlayer = ((currentPlayer + 1) == 7) ? 1 : currentPlayer + 1;
-		idx = ((idx + 1) == 7) ? 1 : idx + 1;
-		Application::DoEvents();
-
-		if (currentPlayer == 1) // Player1 must move
-		{
-			playCard->Enabled = true;
-			return;
-		}
-
-		wait(1000);
-		selectRandomGameType(currentPlayer);
-		selectRandomCard(idx);		
-		Application::DoEvents();
-
-		wait(1000);
-		gameBehavior();
-	}
-
-	private: System::Void selectRandomGameType(int player) {
-		for (size_t i = 0; i < 8; i++)
-		{
-			if (!main->checkingTabel(main->players[player - 1], i, main->tabel))
-			{
-				main->markGame(main->players[player - 1], i, main->tabel);
-				
-				String ^str = System::Convert::ToString((player - 1) * 8 + i);
-				str = "button" + str;
-				Button ^btn = safe_cast<Button^>(table->Controls->Find(str, true)[0]);
-				btn->BackColor = Color::Red;
-				btn->Enabled = false;
-
-				break;
-			}				
-		}
-	}
-
-	private: System::Void selectRandomCard(int playerId) {
-		Player *player = main->players[playerId - 1];
-		String ^str = "player" + Convert::ToString(playerId) + "_table";
-		PictureBox ^obj = safe_cast<PictureBox^>(this->Controls->Find(str, true)[0]);
-
-		if (main->cardsOnTable.size() > 0) {
-			for (size_t i = 0; i < player->cards.size(); i++)
-			{
-				if (main->checkingCard(player, player->cards[i], main->cardsOnTable))
-				{
-					obj->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(player->cards[i]->pathImage.c_str())));
-					main->cardsOnTable.push_back(player->cards[i]);
-					player->cards.erase(find(player->cards.begin(), player->cards.end(), player->cards[i]));
-				}
-				else
-				{
-					obj->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(player->cards[player->cards.size() - 1]->pathImage.c_str())));
-					main->cardsOnTable.push_back(player->cards[player->cards.size() - 1]);
-					player->cards.pop_back();
-				}
-
-				obj->Visible = true;
-				break;
-			}
-
-			return;
-		}
-
-		obj->Image = Image::FromFile(Convert::ToString(player->cards[player->cards.size() - 1]->pathImage.c_str()));
-		main->cardsOnTable.push_back(player->cards[player->cards.size() - 1]);
-		player->cards.pop_back();
-		obj->Visible = true;		
-	}
-
-	private: System::Void setCardsImages()
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) 
 	{
-		player1_0->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[0]->pathImage.c_str())));
-		player1_1->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[1]->pathImage.c_str())));
-		player1_2->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[2]->pathImage.c_str())));
-		player1_3->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[3]->pathImage.c_str())));
-		player1_4->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[4]->pathImage.c_str())));
-		player1_5->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[5]->pathImage.c_str())));
-		player1_6->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[6]->pathImage.c_str())));
-		player1_7->Image = Image::FromFile(IO::Path::GetFullPath(gcnew String(main->players[0]->cards[7]->pathImage.c_str())));
+		if (richTextBox1->Visible == true)
+			richTextBox1->Visible = false;
+		else richTextBox1->Visible = true;	
 	}
-	
-	private: System::Void wait(int timeout)
-	{
-		timeout += clock();
-		while (clock() < timeout) continue;
-	}
-private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) 
-{
-	if (richTextBox1->Visible == true)
-	{
-		richTextBox1->Visible = false;
-	}
-	else
-	{
-		richTextBox1->Visible = true;
-	}
-	
-}
 };
 }

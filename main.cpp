@@ -4,6 +4,7 @@
 #include <time.h>
 #include <random>
 #include "Main.h"
+#include "Table.h"
 
 using namespace std;
 using namespace Whist;
@@ -13,6 +14,29 @@ int main()
 	MenuForm^ mainWindow = gcnew MenuForm();
 	mainWindow->ShowDialog();
 	return 0;
+}
+
+void Main::giveCards()
+{
+	for (size_t i = 0; i < num_pl; i++)
+	{
+		for (size_t j = 0; j < 8; j++)
+		{
+			mt19937 generator;
+			generator.seed(random_device()());
+			uniform_int_distribution<mt19937::result_type> dist(0, 431269821);
+
+			int random_num = 0;
+
+			if (cards.size() >= 2)
+				random_num = dist(generator) % (cards.size() - 1);
+
+			Card *card = cards[random_num];
+			card->player = this->players[i];
+			players[i]->cards.push_back(card);
+			cards.erase(cards.begin() + random_num);
+		}
+	}
 }
 
 Main::Main()
@@ -28,29 +52,11 @@ Main::Main()
 		name = name + str;
 
 		Player *player = new Player(name,i);
-		players.push_back(player);
-
-		// initialisation of vector players->cards
-
-		for (size_t j = 0; j < 8; j++)
-		{
-			mt19937 generator;
-			generator.seed(random_device()());
-			uniform_int_distribution<mt19937::result_type> dist(0, 431269821);
-
-			int random_num = 0;
-
-			if (cards.size() >= 2)
-				random_num = dist(generator) % (cards.size() - 1);
-
-			Card *card = cards[random_num];
-			card->player = player;
-			players[i]->cards.push_back(card);
-			cards.erase(cards.begin() + random_num);
-		}
+		players.push_back(player);	
 	}
-}
 
+	giveCards();
+}
 
 Main::~Main()
 {
@@ -146,11 +152,16 @@ int Main::points(vector <Card*> cardsOnTable, Player* player)
 Player *Main::winner(vector <Card*> cardsOnTable)
 {
 	Player *TheWinner = cardsOnTable[0]->player;
+	Card *winCard = cardsOnTable[0];
 
 	for (size_t i = 0; i < cardsOnTable.size(); i++)
-		if (cardsOnTable[0]->type == cardsOnTable[i]->type
-			&& cardsOnTable[0]->val < cardsOnTable[i]->val)
+	{
+		if (winCard->type == cardsOnTable[i]->type && winCard->val < cardsOnTable[i]->val)
+		{
 			TheWinner = cardsOnTable[i]->player;
+			winCard = cardsOnTable[i];
+		}
+	}
 
 	return TheWinner;
 }
@@ -158,6 +169,7 @@ Player *Main::winner(vector <Card*> cardsOnTable)
 void Main::markGame(Player *player,int game, int (&tabel)[6][8])
 {
 	tabel[player->numberOfPlayer][game] = 1;
+	Table::currentGame = (Player::Games)game;
 }
 
 int Main::checkingTabel(Player *player, int game, int (&tabel)[6][8])
@@ -167,3 +179,4 @@ int Main::checkingTabel(Player *player, int game, int (&tabel)[6][8])
 
 	return 0;
 }
+

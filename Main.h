@@ -22,5 +22,6 @@ public:
 	void markGame(Player *player, int game, int (&tabel)[6][8]);
 	int checkingTabel(Player *player, int game, int(&tabel)[6][8]); 
 	Player *winner(vector <Card*> cardsOnTable);
+	void giveCards();
 };
 
