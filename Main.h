@@ -21,6 +21,6 @@ public:
 	int points(vector <Card*> cardsOnTable, Player* player);
 	void markGame(Player *player, int game, int (&tabel)[6][8]);
 	int checkingTabel(Player *player, int game, int(&tabel)[6][8]); 
-	int winner(vector <Card*> cardsOnTable, int game);
+	Player *winner(vector <Card*> cardsOnTable);
 };
 

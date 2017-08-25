@@ -2,6 +2,7 @@
 #include <string>
 using namespace std;
 
+class Player;
 public class Card
 {
 public:
@@ -13,7 +14,7 @@ public:
 	int val;
 	Color type;
 	string pathImage;
-	int player;
+	Player *player;
 
 	Card();
 	Card(int val, Color type);

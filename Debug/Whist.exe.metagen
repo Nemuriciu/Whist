@@ -37,13 +37,12 @@ Class Whist.GameForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
+    System.Windows.Forms.Button openTable : Public
     System.Windows.Forms.Button playCard : Public
     System.Windows.Forms.PictureBox selectedCard : Public
-    System.Windows.Forms.Button openTable : Public
-    System.Windows.Forms.Label gameInfo : Public
     Whist.Table table : Public
+    System.Windows.Forms.Label gameInfo : Public
     Main* main : Public, Static
-    Games currentGame : Public, Static
     Int32 currentPlayer : Public, Static
 Class Whist.MenuForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
