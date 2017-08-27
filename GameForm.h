@@ -32,6 +32,9 @@ namespace Whist {
 	private: System::Windows::Forms::RichTextBox^  richTextBox1;
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::Label^  gameSelected;
+	private: System::Windows::Forms::DataGridView^  dataGridView1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column1;
 
 	private: System::Windows::Forms::Label^  gameInfo;
 
@@ -128,6 +131,7 @@ namespace Whist {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(GameForm::typeid));
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->player1_0 = (gcnew System::Windows::Forms::PictureBox());
 			this->player1_2 = (gcnew System::Windows::Forms::PictureBox());
 			this->player1_1 = (gcnew System::Windows::Forms::PictureBox());
@@ -194,6 +198,9 @@ namespace Whist {
 			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->gameSelected = (gcnew System::Windows::Forms::Label());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player1_0))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player1_2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player1_1))->BeginInit();
@@ -248,6 +255,7 @@ namespace Whist {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player4_table))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player5_table))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player3_table))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// player1_0
@@ -1126,6 +1134,35 @@ namespace Whist {
 			this->gameSelected->TabIndex = 65;
 			this->gameSelected->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(2) {
+				this->Column2,
+					this->Column1
+			});
+			this->dataGridView1->Location = System::Drawing::Point(240, 70);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->Size = System::Drawing::Size(394, 221);
+			this->dataGridView1->TabIndex = 66;
+			// 
+			// Column2
+			// 
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Monotype Corsiva", 8.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			dataGridViewCellStyle1->ForeColor = System::Drawing::Color::Red;
+			dataGridViewCellStyle1->NullValue = nullptr;
+			this->Column2->DefaultCellStyle = dataGridViewCellStyle1;
+			this->Column2->HeaderText = L"Column2";
+			this->Column2->Name = L"Column2";
+			this->Column2->ReadOnly = true;
+			// 
+			// Column1
+			// 
+			this->Column1->HeaderText = L"Column1";
+			this->Column1->Name = L"Column1";
+			this->Column1->ReadOnly = true;
+			// 
 			// GameForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1133,6 +1170,7 @@ namespace Whist {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1008, 662);
+			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->gameSelected);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->richTextBox1);
@@ -1259,6 +1297,7 @@ namespace Whist {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player4_table))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player5_table))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->player3_table))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
