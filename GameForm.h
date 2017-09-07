@@ -36,8 +36,7 @@ namespace Whist {
 	private: System::Windows::Forms::ColumnHeader^  playerName;
 	private: System::Windows::Forms::ColumnHeader^  playerScore;
 	private: System::Windows::Forms::ColumnHeader^  empty;
-	public: System::Windows::Forms::Button^  openScore;
-	private:
+	private: System::Windows::Forms::Button^  openScore;
 	private: System::Windows::Forms::Label^  gameInfo;
 
 	public:
@@ -1080,6 +1079,7 @@ namespace Whist {
 			this->playCard->AutoSize = true;
 			this->playCard->BackColor = System::Drawing::Color::Cornsilk;
 			this->playCard->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->playCard->Enabled = false;
 			this->playCard->FlatAppearance->BorderSize = 0;
 			this->playCard->Font = (gcnew System::Drawing::Font(L"Verdana", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -1408,13 +1408,6 @@ namespace Whist {
 	private: System::Void choose_Card(System::Object^  sender, System::EventArgs^  e) {
 		Button ^obj = safe_cast<Button^>(sender);
 
-		if (Table::currentGame == (Player::Games)99)
-		{
-			gameInfo->ForeColor = Color::Red;
-			gameInfo->Text = "No game type selected.";
-			return;
-		}
-
 		if (selectedCard != nullptr)
 		{
 			if (main->cardsOnTable.size() > 0) {
@@ -1444,11 +1437,20 @@ namespace Whist {
 	private: System::Void selectGame(System::Object^  sender, System::EventArgs^  e) {
 
 		table->ShowDialog();
-		openTable->Enabled = false;
-		gameInfo->ForeColor = Color::Goldenrod;
 
-		gameInfo->Text = gameToString() + " selected. Play a Card";
-		gameSelected->Text = gameToString();
+		if (Table::currentGame != (Player::Games)99)
+		{
+			openTable->Enabled = false;
+			gameInfo->ForeColor = Color::Goldenrod;
+
+			gameInfo->Text = gameToString() + " selected. Play a Card";
+			gameSelected->Text = gameToString();
+			playCard->Enabled = true;
+			return;
+		}
+		
+		gameInfo->ForeColor = Color::Red;
+		gameInfo->Text = "No game selected. Choose a game!";
 	}
 
 	private: System::Void gameBehavior() {
@@ -1542,7 +1544,7 @@ namespace Whist {
 			{
 				main->markGame(main->players[player - 1], i, main->tabel);
 				
-				String ^str = System::Convert::ToString((player - 1) * 8 + i);
+				String ^str = System::Convert::ToString((player - 1) * 8 + i + 1);
 				str = "button" + str;
 				Button ^btn = safe_cast<Button^>(table->Controls->Find(str, true)[0]);
 				btn->BackColor = Color::Red;

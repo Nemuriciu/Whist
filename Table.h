@@ -1023,7 +1023,7 @@ namespace Whist {
 
 		obj->BackColor = Color::Red;
 		obj->Enabled = false;
-		this->Close();
+		//this->Close();
 	}
 };
 }
